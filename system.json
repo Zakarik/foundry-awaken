@@ -1,14 +1,42 @@
 {
   "name": "awaken",
   "title": "Awaken",
-  "description": "A minimalist game system which provides configurable Actor and Item templates to support free-form system agnostic game-play.",
-  "version": "0.0.1",
+  "description": "Une implémentation officielle, supportée par l'éditeur, pour le jeu Awaken.",
+  "version": "1.0.0",
   "minimumCoreVersion": "0.9",
   "compatibleCoreVersion": "9",
   "author": "Zakarik",
   "esmodules": ["module/awaken.mjs"],
   "styles": ["styles/awaken.css"],
   "packs": [
+    {
+        "name": "armes-a-distance",
+        "label": "Armes à Distance",
+        "path": "packs/armes-a-distance.db",
+        "entity": "Item",
+        "system": "awaken"
+    },
+    {
+        "name": "armes-de-melee",
+        "label": "Armes de mêlée",
+        "path": "packs/armes-de-melee.db",
+        "entity": "Item",
+        "system": "awaken"
+    },
+    {
+        "name": "prodiges",
+        "label": "Prodiges",
+        "path": "packs/prodiges.db",
+        "entity": "Item",
+        "system": "awaken"
+    },
+    {
+        "name": "armures",
+        "label": "Armures",
+        "path": "packs/armures.db",
+        "entity": "Item",
+        "system": "awaken"
+    }
   ],
   "languages": [
     {
@@ -19,8 +47,8 @@
   ],
   "gridDistance": 5,
   "gridUnits": "m",
-  "primaryTokenAttribute": "energie",
-  "url": "https://github.com/Zakarik/foundry-aquablue",
-  "manifest": "https://github.com/Zakarik/foundry-aquablue/blob/main/system.json",
-  "download": "https://github.com/Zakarik/foundry-aquablue/archive/refs/heads/main.zip"
+  "primaryTokenAttribute": "",
+  "url": "https://github.com/Zakarik/foundry-awaken",
+  "manifest": "https://github.com/Zakarik/foundry-awaken/blob/main/system.json",
+  "download": "https://github.com/Zakarik/foundry-awaken/archive/refs/heads/main.zip"
 }
