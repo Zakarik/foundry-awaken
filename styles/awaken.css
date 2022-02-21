@@ -1,0 +1,1736 @@
+.awaken .window-content {
+  background: none;
+  background-color: white;
+}
+.awaken header.sheet-header {
+  flex: 0;
+  align-items: flex-start;
+}
+.awaken header.sheet-header .profile-img {
+  width: 150px;
+  height: 200px;
+  margin-right: 5px;
+}
+.awaken header.sheet-header h1.charname {
+  width: 100%;
+  margin-bottom: 5px;
+  flex: none;
+}
+.awaken header.sheet-header h1.charname input {
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border-radius: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  margin: 0px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.awaken .description {
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.awaken .description .header-mTitle {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  background: black;
+  border: 1px solid black;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: 0px;
+}
+.awaken .description div.editor {
+  width: 100%;
+  border: 1px solid black;
+  min-height: 100px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: justify;
+}
+.awaken .description div.tox-tinymce {
+  min-height: 100px;
+}
+.awaken div.expand span.summary,
+.awaken div.expand div.summary {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid black;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 15px;
+  align-items: center;
+}
+.awaken div.expand span.summary i,
+.awaken div.expand div.summary i {
+  cursor: pointer;
+  margin-right: 2px;
+}
+.awaken div.expand span.summary i:hover,
+.awaken div.expand div.summary i:hover {
+  box-shadow: 0 0 5px var(--color-shadow-primary);
+}
+.awaken div.expand span.hide,
+.awaken div.expand div.hide {
+  display: none;
+}
+.awaken div.expand span.show,
+.awaken div.expand div.show {
+  width: 100%;
+  text-align: justify;
+  margin-bottom: 5px;
+}
+.awaken div.expand div.gestionButton {
+  margin-left: auto;
+  width: max-content;
+}
+.actor header.sheet-header {
+  margin-bottom: 5px;
+}
+.actor header.sheet-header .aData {
+  height: 100%;
+  position: relative;
+}
+.actor header.sheet-header .aData label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid black;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.actor header.sheet-header .aData label span {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  margin-right: 5px;
+}
+.actor header.sheet-header .aData label input {
+  background: transparent;
+  border: none;
+}
+.actor header.sheet-header .aData label:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+.actor .description .vertus {
+  width: calc(50% - 10px);
+  flex: none;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.actor .description .vertus .header-bTitle {
+  width: max-content;
+  height: 22px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  background: black;
+  border: 1px solid black;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: 0px;
+}
+.actor .description .vertus header {
+  width: 100%;
+  text-align: center;
+  height: 25px;
+}
+.actor .description .vertus .chance,
+.actor .description .vertus .courage,
+.actor .description .vertus .volonte {
+  display: flex;
+  flex: none;
+  width: calc(100% / 3);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: baseline;
+}
+.actor .description .vertus .chance h2,
+.actor .description .vertus .courage h2,
+.actor .description .vertus .volonte h2 {
+  display: flex;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  white-space: nowrap;
+  justify-content: center;
+  line-height: 25px;
+  border: 0px;
+  margin: 0px;
+  align-items: center;
+}
+.actor .description .vertus .chance h2 img,
+.actor .description .vertus .courage h2 img,
+.actor .description .vertus .volonte h2 img {
+  width: 23px;
+  height: 23px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 0px;
+  margin-right: 5px;
+}
+.actor .description .vertus .chance input[type="number"],
+.actor .description .vertus .courage input[type="number"],
+.actor .description .vertus .volonte input[type="number"] {
+  font-size: 25px;
+  width: 60px;
+  height: 60px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: underline;
+  border: 1px solid black;
+  z-index: 999;
+  color: black;
+}
+.actor .description .vertus .chance div.line,
+.actor .description .vertus .volonte div.line {
+  width: 100%;
+  margin-top: 5px;
+}
+.actor .description .vertus .chance div.line button,
+.actor .description .vertus .volonte div.line button {
+  width: 21px;
+  height: 21px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  padding: 0px;
+  background: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  cursor: pointer;
+}
+.actor .description .vertus .chance div.line button.checked,
+.actor .description .vertus .volonte div.line button.checked {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+.actor .description .flexrow {
+  align-items: baseline;
+}
+.actor .description .flexcol {
+  width: calc(50% - 10px);
+  flex: none;
+  margin-bottom: 5px;
+}
+.actor .description .flexcol .reputation,
+.actor .description .flexcol .equipement {
+  width: 100%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid black;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.actor .description .flexcol .reputation h1,
+.actor .description .flexcol .equipement h1 {
+  display: flex;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 25px;
+  margin: 0px;
+  border: 0px;
+}
+.actor .description .flexcol .reputation h1 a,
+.actor .description .flexcol .equipement h1 a {
+  margin-left: auto;
+}
+.actor .description .flexcol .reputation div.expand,
+.actor .description .flexcol .equipement div.expand {
+  margin-top: 5px;
+}
+.actor .description .flexcol .equipement {
+  margin-top: 5px;
+}
+.actor .description .flexcol .equipement label {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-left: auto;
+  align-items: center;
+}
+.actor .description .flexcol .equipement label span {
+  font-size: 15px;
+  width: 90px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.actor .description .flexcol .equipement label input {
+  padding: 0px;
+  text-align: center;
+  color: black;
+  width: 40px;
+  border: 2px solid black;
+  font-size: 15px;
+}
+.actor .description .flexcol .reputation {
+  padding-bottom: 10px;
+}
+.actor .attributsCompetences {
+  justify-content: space-between;
+}
+.actor .attributsCompetences div.attribut {
+  display: flex;
+  position: relative;
+  width: calc((100% / 3) - 10px);
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex: none;
+}
+.actor .attributsCompetences div.attribut .header-bTitle {
+  width: max-content;
+  height: 22px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  background: black;
+  border: 1px solid black;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: 0px;
+}
+.actor .attributsCompetences div.attribut .header-space {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px dashed black;
+  height: 1px;
+  margin-right: 2px;
+}
+.actor .attributsCompetences div.attribut .header-spaceComp {
+  height: 26px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 0px;
+}
+.actor .attributsCompetences div.attribut header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actor .attributsCompetences div.attribut header h1 {
+  margin-left: auto;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: none;
+  margin: 0px;
+  color: black;
+  font-weight: bold;
+}
+.actor .attributsCompetences div.attribut header.social {
+  padding-right: 16px;
+  width: 100%;
+}
+.actor .attributsCompetences div.attribut header.mental,
+.actor .attributsCompetences div.attribut header.physique {
+  right: 5px;
+  width: calc(100% + 5px);
+}
+.actor .attributsCompetences div.attribut header.mental {
+  right: 5px;
+  width: calc(100% + 24px);
+}
+.actor .attributsCompetences div.attribut header.physique {
+  right: 5px;
+  width: calc(100% + 14px);
+}
+.actor .attributsCompetences div.attribut div.blockStats {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 76px;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.score {
+  position: absolute;
+  right: 0px;
+  margin-top: -42px;
+  border-top: 2px solid black;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.score input[type="number"] {
+  border: 1px solid black;
+  border-radius: 30px;
+  color: black;
+  padding: 0px;
+  height: 50px;
+  width: 50px;
+  font-size: 25px;
+  text-decoration: underline;
+  text-align: center;
+  background: transparent;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.base {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 10px;
+  align-items: flex-start;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.base h2 {
+  width: max-content;
+  font-size: 15px;
+  line-height: 25px;
+  white-space: nowrap;
+  border: none;
+  margin: 0px;
+  color: black;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.base img {
+  margin-left: auto;
+  width: 24px;
+  height: 25px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 0px;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.base input[type="number"] {
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+  border-color: black;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0px;
+  background: transparent;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.specialisation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5px;
+  align-items: flex-end;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.specialisation div.gestionButton {
+  display: flex;
+  width: max-content;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.specialisation span {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.specialisation img {
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.competence div.create {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  justify-content: right;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.experience {
+  display: flex;
+  padding-left: 10px;
+  width: calc(100% - 10px);
+}
+.actor .attributsCompetences div.attribut div.blockStats div.experience button {
+  width: 15px;
+  height: 15px;
+  background: lightgrey;
+  padding: 0px;
+  border: 1px solid black;
+  border-radius: 0px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.actor .attributsCompetences div.attribut div.blockStats div.experience button.checked::before {
+  content: "X";
+  width: 100%;
+  height: 15px;
+  color: black;
+  font-size: 20px;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+}
+.actor .prodiges .header-bTitle {
+  width: max-content;
+  height: 22px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  background: black;
+  border: 1px solid black;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: 0px;
+}
+.actor .prodiges div.prodigeCol {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.actor .prodiges div.prodigeCol > div {
+  width: calc(50% - 10px);
+  flex: none;
+  margin-top: 10px;
+}
+.actor .prodiges div.prodigeCol > div div.base {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.actor .prodiges div.prodigeCol > div div.base h2 {
+  display: flex;
+  font-size: 17px;
+  text-transform: uppercase;
+  width: max-content;
+  white-space: nowrap;
+  border: 0px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  line-height: 27px;
+}
+.actor .prodiges div.prodigeCol > div div.base h2 img {
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 0px;
+  margin-left: 5px;
+}
+.actor .prodiges div.prodigeCol > div div.base h2.corps::before {
+  display: inline-block;
+  content: "";
+  width: 30px;
+  height: 25px;
+  background: url(../assets/icons/corps.svg);
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 10px;
+}
+.actor .prodiges div.prodigeCol > div div.base h2.esprit::before {
+  display: inline-block;
+  content: "";
+  width: 30px;
+  height: 25px;
+  background: url(../assets/icons/esprit.svg);
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 10px;
+}
+.actor .prodiges div.prodigeCol > div div.base h2.illusion::before {
+  display: inline-block;
+  content: "";
+  width: 30px;
+  height: 25px;
+  background: url(../assets/icons/illusion.svg);
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 10px;
+}
+.actor .prodiges div.prodigeCol > div div.base h2.realite::before {
+  display: inline-block;
+  content: "";
+  width: 30px;
+  height: 25px;
+  background: url(../assets/icons/realite.svg);
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 10px;
+}
+.actor .prodiges div.prodigeCol > div div.base input[type="number"] {
+  width: 30px;
+  text-align: center;
+  font-size: 15px;
+  padding: 0px;
+  border: 2px solid black;
+  color: black;
+  margin-left: auto;
+}
+.actor .prodiges div.prodigeCol > div div.base div.experience {
+  display: flex;
+  padding-left: 2px;
+  width: max-content;
+}
+.actor .prodiges div.prodigeCol > div div.base div.experience button {
+  width: 15px;
+  height: 15px;
+  background: lightgrey;
+  padding: 0px;
+  border: 1px solid black;
+  border-radius: 0px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.actor .prodiges div.prodigeCol > div div.base div.experience button.checked::before {
+  content: "X";
+  width: 100%;
+  height: 15px;
+  color: black;
+  font-size: 20px;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 28px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line i.fa {
+  font-size: 28px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line h3 {
+  width: max-content;
+  margin: 0px;
+  font-weight: bold;
+  font-variant: small-caps;
+  line-height: 28px;
+  font-size: 18px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.rang {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  line-height: 28px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding-left: 5px;
+  margin-left: auto;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.rang span.label {
+  font-weight: bold;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.rang span.score {
+  display: flex;
+  width: 45px;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  font-family: arial;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.rang span.score::before {
+  content: "<";
+  font-size: 12px;
+  margin-left: 2px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.rang span.score::after {
+  content: ">";
+  font-size: 12px;
+  margin-right: 2px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line img.roll {
+  width: 28px;
+  height: 28px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line span.type {
+  display: inline-block;
+  line-height: 28px;
+  width: 100%;
+  font-weight: bold;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.activation {
+  display: flex;
+  width: 50%;
+  padding-left: 5px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.activation span.label {
+  font-weight: bold;
+  line-height: 28px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.activation span.data {
+  line-height: 28px;
+  margin-left: 5px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.duree {
+  display: flex;
+  width: calc(50% - 1px);
+  padding-left: 5px;
+  border-left: 1px solid black;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.duree span.label {
+  font-weight: bold;
+  line-height: 28px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line label.duree span.data {
+  line-height: 28px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.line:not(:first-of-type) {
+  border-top: 1px solid black;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.summary {
+  border-bottom: 0px;
+  justify-content: left;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.summary div.gestionButton {
+  margin-left: 5px;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList div.show {
+  display: flex;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.actor .prodiges div.prodigeCol > div div.prodigeList span.description {
+  width: 100%;
+  border-top: 1px solid black;
+  text-align: justify;
+  padding: 5px;
+  margin: 0px;
+}
+.actor .prodiges div.prodigeCol > div div.create {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}
+.actor .prodiges div.corruption {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+.actor .prodiges div.corruption div.main {
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 12px;
+  border: 1px solid black;
+  border-top-left-radius: 30px;
+}
+.actor .prodiges div.corruption div.main div.buttons,
+.actor .prodiges div.corruption div.main div.max,
+.actor .prodiges div.corruption div.main div.malus {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: right;
+}
+.actor .prodiges div.corruption div.main div.buttons button,
+.actor .prodiges div.corruption div.main div.max button,
+.actor .prodiges div.corruption div.main div.malus button {
+  width: 40px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0px;
+  height: 22px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-left: 4px;
+  cursor: pointer;
+}
+.actor .prodiges div.corruption div.main div.buttons button.checked,
+.actor .prodiges div.corruption div.main div.max button.checked,
+.actor .prodiges div.corruption div.main div.malus button.checked {
+  background: black;
+  color: white;
+}
+.actor .prodiges div.corruption div.main div.buttons h3,
+.actor .prodiges div.corruption div.main div.max h3,
+.actor .prodiges div.corruption div.main div.malus h3 {
+  width: max-content;
+  white-space: nowrap;
+  color: #cc0829;
+  margin-right: auto;
+  font-weight: bold;
+  margin-bottom: 0px;
+  font-size: 13px;
+}
+.actor .prodiges div.corruption div.main div.buttons span.spacesmall,
+.actor .prodiges div.corruption div.main div.max span.spacesmall,
+.actor .prodiges div.corruption div.main div.malus span.spacesmall {
+  display: inline-block;
+  width: calc(100% - 75px - (9 * 44px) - (9 * 3px));
+  height: 2px;
+  border-bottom: 2px dotted black;
+}
+.actor .prodiges div.corruption div.main div.buttons span.spacelarge,
+.actor .prodiges div.corruption div.main div.max span.spacelarge,
+.actor .prodiges div.corruption div.main div.malus span.spacelarge {
+  display: inline-block;
+  width: calc(100% - 55px - (6 * 41px) - (6 * 3px));
+  height: 2px;
+  border-bottom: 2px dotted black;
+}
+.actor .prodiges div.corruption div.main div.buttons span.score,
+.actor .prodiges div.corruption div.main div.max span.score,
+.actor .prodiges div.corruption div.main div.malus span.score {
+  width: 42px;
+  height: 15px;
+  text-align: center;
+  border: 1px solid black;
+  line-height: 15px;
+  margin-left: 3px;
+  height: 22px;
+  line-height: 22px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.actor .prodiges div.corruption div.main div.buttons,
+.actor .prodiges div.corruption div.main div.max {
+  margin-bottom: 2px;
+}
+.actor .prodiges div.corruption header {
+  position: absolute;
+  width: 123px;
+  background: white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-bottom-right-radius: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  margin-top: -1px;
+  right: 0px;
+}
+.actor .prodiges div.corruption header .header-bTitle {
+  font-size: 14px;
+}
+.actor .combat .header-bTitle {
+  width: max-content;
+  height: 22px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  background: black;
+  border: 1px solid black;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: 0px;
+}
+.actor .combat > div.flexrow {
+  justify-content: space-between;
+  align-items: baseline;
+}
+.actor .combat > div.flexrow div.colFixe {
+  align-items: baseline;
+  width: 200px;
+  flex: none;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  flex: none;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves header img {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves label span.label {
+  width: max-content;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves label span.score,
+.actor .combat > div.flexrow div.colFixe div.reserves label input {
+  border-bottom: 1px dotted black;
+  width: 25%;
+  min-width: 50px;
+  text-align: center;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  color: black;
+  line-height: 18px;
+  background: transparent;
+  height: 18px;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves label span.score {
+  padding-top: 2px;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves label input {
+  padding-top: 6px;
+}
+.actor .combat > div.flexrow div.colFixe div.reserves label:last-of-type {
+  margin-bottom: 5px;
+}
+.actor .combat > div.flexrow div.colFixe div.stats {
+  text-align: center;
+  width: 200px;
+  padding: 12px;
+  border: 1px solid black;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  flex: none;
+  margin-top: 5px;
+}
+.actor .combat > div.flexrow div.colFixe div.stats h2 {
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  border: 0px;
+  margin: 0px;
+  line-height: 36px;
+  font-weight: bold;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colG,
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colD {
+  width: calc(100% / 3);
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colG span,
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colD span {
+  display: block;
+  width: 100%;
+  font-variant: small-caps;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colG span:first-of-type,
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colD span:first-of-type {
+  border-bottom: 1px solid black;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colG span:last-of-type,
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colD span:last-of-type {
+  border-top: 1px solid black;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colG span {
+  text-align: left;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colD span {
+  text-align: right;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colB {
+  width: calc(100% / 3);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colB span:first-of-type {
+  display: block;
+  width: 0px;
+  height: 20px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block div.colB span:last-of-type {
+  display: block;
+  width: 100%;
+  font-variant: small-caps;
+  text-align: center;
+}
+.actor .combat > div.flexrow div.colFixe div.stats div.block > span {
+  width: calc(100% / 3);
+  height: 36px;
+  border: 2px solid black;
+  text-align: center;
+  padding: 0px;
+  font-size: 26px;
+  color: black;
+  background: #f5f5f5;
+}
+.actor .combat > div.flexrow > div.colFlexible {
+  align-items: baseline;
+  flex: none;
+  width: calc(50% - (260px / 2) - 10px);
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip,
+.actor .combat > div.flexrow > div.colFlexible div.armement {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  flex: none;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip header,
+.actor .combat > div.flexrow > div.colFlexible div.armement header {
+  position: relative;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip header a,
+.actor .combat > div.flexrow > div.colFlexible div.armement header a {
+  position: absolute;
+  right: 0px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.summary,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.summary {
+  border-bottom: 1px solid black;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.summary i.buttonExpand,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.summary i.buttonExpand {
+  font-size: 27px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.summary span.name,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.summary span.name {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.summary img.wear,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.summary img.wear,
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.summary img.unwear,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.summary img.unwear {
+  border: 0px;
+  width: 27px;
+  cursor: pointer;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.summary img.wear:hover,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.summary img.wear:hover,
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.summary img.unwear:hover,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.summary img.unwear:hover {
+  filter: drop-shadow(0px 0px 5px var(--color-shadow-primary));
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.main,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: calc(100% - 40px);
+  margin-bottom: 0px;
+  line-height: 21px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.main span.labelType,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.main span.labelType {
+  display: inline-block;
+  text-align: center;
+  width: 60%;
+  line-height: 21px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.main label.degats,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.main label.degats {
+  display: inline-block;
+  width: 40%;
+  line-height: 21px;
+  border-left: 1px solid black;
+  text-align: left;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.main label.degats span.label,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.main label.degats span.label {
+  width: max-content;
+  font-weight: bold;
+  font-variant: small-caps;
+  padding-left: 5px;
+  line-height: 21px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.main label.degats span.score,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.main label.degats span.score {
+  margin-left: 5px;
+  line-height: 21px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste div.gestionButton,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste div.gestionButton {
+  width: 40px;
+  line-height: 22px;
+  border-left: 1px solid black;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste span.typeDegats,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste span.typeDegats {
+  width: 100%;
+  line-height: 22px;
+  text-align: center;
+  border-top: 1px solid black;
+  margin-bottom: 0px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste span.description,
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste span.description {
+  width: 100%;
+  text-align: justify;
+  padding: 5px;
+  border-top: 1px solid black;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armementEquip div.liste:not(:last-of-type),
+.actor .combat > div.flexrow > div.colFlexible div.armement div.liste:not(:last-of-type) {
+  margin-bottom: 2px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armement {
+  margin-top: 5px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip,
+.actor .combat > div.flexrow > div.colFlexible div.armure {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  flex: none;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip header,
+.actor .combat > div.flexrow > div.colFlexible div.armure header {
+  position: relative;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip header a,
+.actor .combat > div.flexrow > div.colFlexible div.armure header a {
+  position: absolute;
+  right: 0px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.summary,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.summary {
+  border-bottom: 1px solid black;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.summary i.buttonExpand,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.summary i.buttonExpand {
+  font-size: 27px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.summary span.name,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.summary span.name {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-variant: small-caps;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.summary img.wear,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.summary img.wear,
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.summary img.unwear,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.summary img.unwear {
+  border: 0px;
+  width: 27px;
+  cursor: pointer;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.summary img.wear:hover,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.summary img.wear:hover,
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.summary img.unwear:hover,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.summary img.unwear:hover {
+  filter: drop-shadow(0px 0px 5px var(--color-shadow-primary));
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.main,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: calc(100% - 40px);
+  margin-bottom: 0px;
+  line-height: 21px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste label,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste label {
+  display: inline-block;
+  width: 100%;
+  line-height: 21px;
+  text-align: left;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste label span.label,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste label span.label {
+  width: max-content;
+  font-weight: bold;
+  font-variant: small-caps;
+  padding-left: 5px;
+  line-height: 21px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste label span.score,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste label span.score {
+  margin-left: 5px;
+  line-height: 21px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste label.bonusDefense,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste label.bonusDefense,
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste label.bonusContact,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste label.bonusContact {
+  border-top: 1px solid black;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste div.gestionButton,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste div.gestionButton {
+  width: 40px;
+  line-height: 22px;
+  border-left: 1px solid black;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste span.description,
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste span.description {
+  width: 100%;
+  text-align: justify;
+  padding: 5px;
+  border-top: 1px solid black;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armureEquip div.liste:not(:last-of-type),
+.actor .combat > div.flexrow > div.colFlexible div.armure div.liste:not(:last-of-type) {
+  margin-bottom: 2px;
+}
+.actor .combat > div.flexrow > div.colFlexible div.armure {
+  margin-top: 5px;
+}
+.actor .combat div.enduranceVitalite {
+  display: flex;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid black;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  margin-top: 5px;
+}
+.actor .combat div.enduranceVitalite div.endurance {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+}
+.actor .combat div.enduranceVitalite div.endurance header {
+  display: flex;
+  width: 130px;
+  align-items: center;
+  z-index: 2;
+}
+.actor .combat div.enduranceVitalite div.endurance header span.titre {
+  display: inline-block;
+  width: max-content;
+  white-space: nowrap;
+  margin-right: 2px;
+  background: white;
+  z-index: 2;
+}
+.actor .combat div.enduranceVitalite div.endurance header span.space {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 2px dotted black;
+  height: 2px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+  min-height: 32px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.block {
+  display: flex;
+  width: calc((100% / 4) - (130px / 4));
+  justify-content: center;
+  align-items: center;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.block div {
+  display: flex;
+  width: 70px;
+  position: relative;
+  height: 30px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.block div button {
+  background: #e9e9ed;
+  cursor: pointer;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.block div button.checked {
+  background: black;
+  color: white;
+  font-weight: normal;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.block div button.main {
+  position: absolute;
+  left: calc(50% - (42px / 2));
+  width: 40px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0px;
+  height: 22px;
+  line-height: 22px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.block div button.sub1 {
+  position: absolute;
+  width: 20px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0px;
+  height: 22px;
+  line-height: 22px;
+  z-index: 999;
+  top: 6px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.block div button.sub2 {
+  position: absolute;
+  width: 20px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0px;
+  height: 22px;
+  line-height: 22px;
+  z-index: 999;
+  top: 6px;
+  right: 0px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockEndurance,
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockModEndurance {
+  display: flex;
+  width: calc(((100% / 4) - (130px / 4)) * 2);
+  justify-content: right;
+  align-items: center;
+  border-bottom: 1px dashed black;
+  height: 30px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockEndurance header,
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockModEndurance header {
+  justify-content: right;
+}
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockEndurance span.score,
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockModEndurance span.score,
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockEndurance input,
+.actor .combat div.enduranceVitalite div.endurance div.line div.blockModEndurance input {
+  width: 70px;
+  text-align: center;
+  border: 0px;
+  padding: 0px;
+  font-size: 15px;
+  background: transparent;
+}
+.actor .combat div.enduranceVitalite div.endurance div.lastLine {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+  min-height: 32px;
+  position: relative;
+}
+.actor .combat div.enduranceVitalite div.endurance div.lastLine span.space {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  border-bottom: 2px dotted black;
+  height: 2px;
+  z-index: 0;
+  top: calc(50% - 1px);
+}
+.actor .combat div.enduranceVitalite div.endurance div.lastLine div.lastBlock {
+  display: flex;
+  width: calc((100% / 4) - (130px / 4));
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.actor .combat div.enduranceVitalite div.endurance div.lastLine div.lastBlock button {
+  background: #e9e9ed;
+  cursor: pointer;
+  width: 20px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0px;
+  height: 22px;
+  line-height: 22px;
+}
+.actor .combat div.enduranceVitalite div.endurance div.lastLine div.lastBlock button.checked {
+  background: black;
+  color: white;
+  font-weight: normal;
+}
+.actor .combat div.enduranceVitalite div.vitalite {
+  display: flex;
+  width: 30%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  border-left: 1px solid black;
+}
+.actor .combat div.enduranceVitalite div.vitalite header {
+  margin-left: auto;
+}
+.actor .combat div.enduranceVitalite div.vitalite div.line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-right: 10px;
+  min-height: 32px;
+  margin-left: 10px;
+}
+.actor .combat div.enduranceVitalite div.vitalite div.line span.label {
+  width: max-content;
+  color: #cc0829;
+  font-weight: bold;
+  padding-left: 2px;
+}
+.actor .combat div.enduranceVitalite div.vitalite div.line:not(:first-of-type) {
+  border-bottom: 1px dashed black;
+  align-items: end;
+}
+.specialisation label.select {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  flex: none;
+  width: max-content;
+  align-items: end;
+  border-bottom: 1px solid black;
+}
+.specialisation label.select span {
+  font-size: inherit;
+  font-variant: small-caps;
+}
+.specialisation label.select select {
+  text-align: center;
+  border: 0px;
+  border-radius: 0px;
+  font-size: 15px;
+  background: transparent;
+  padding-top: 5px;
+}
+.prodige .aData h1.prodigename {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+  flex: none;
+}
+.prodige .aData h1.prodigename input[type="text"] {
+  width: calc(100% - 90px);
+  text-align: center;
+  background: transparent;
+  border-radius: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  margin: 0px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.prodige .aData h1.prodigename input[type="number"] {
+  width: 90px;
+  text-align: center;
+  background: transparent;
+  border-radius: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  margin: 0px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.prodige .aData div.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.prodige .aData div.main label.famille,
+.prodige .aData div.main label.activation,
+.prodige .aData div.main label.duree {
+  display: flex;
+  flex: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-end;
+  border-bottom: 1px solid black;
+  height: 28px;
+}
+.prodige .aData div.main label.famille span,
+.prodige .aData div.main label.activation span,
+.prodige .aData div.main label.duree span {
+  width: max-content;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+.prodige .aData div.main label.famille select,
+.prodige .aData div.main label.activation select,
+.prodige .aData div.main label.duree select {
+  border: 0px;
+  background: transparent;
+  width: 100%;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.prodige .aData div.main label.famille input,
+.prodige .aData div.main label.activation input,
+.prodige .aData div.main label.duree input {
+  width: 100%;
+  border: 0px;
+  background: transparent;
+  border-radius: 0px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.prodige .aData div.main select.type {
+  height: 28px;
+  width: 50%;
+  flex: none;
+  border: 0px;
+  background: transparent;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+  padding-top: 5px;
+}
+.prodige .aData div.main label.famille {
+  width: calc(50% - 1px);
+  border-right: 1px solid black;
+}
+.prodige .aData div.main label.activation,
+.prodige .aData div.main label.duree {
+  width: 100%;
+}
+.prodige .description {
+  margin-top: 5px;
+}
+.armement .aData div.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.armement .aData div.main label.degats {
+  display: flex;
+  flex: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-end;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  height: 28px;
+  width: 50%;
+  padding-left: 5px;
+}
+.armement .aData div.main label.degats span {
+  width: max-content;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+.armement .aData div.main label.degats select {
+  border: 0px;
+  background: transparent;
+  width: 100%;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.armement .aData div.main label.degats input {
+  width: 100%;
+  border: 0px;
+  background: transparent;
+  border-radius: 0px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.armement .aData div.main select.type {
+  height: 28px;
+  width: 50%;
+  flex: none;
+  border: 0px;
+  background: transparent;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+  padding-top: 5px;
+}
+.armement .aData div.main select.typedgts {
+  height: 28px;
+  width: 100%;
+  flex: none;
+  border: 0px;
+  background: transparent;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+  padding-top: 5px;
+}
+.armement .description {
+  margin-top: 5px;
+}
+.armure .aData h1.armorname {
+  width: 100%;
+  flex: none;
+}
+.armure .aData h1.armorname input {
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border-radius: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  margin: 0px;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.armure .aData div.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.armure .aData div.main label {
+  display: flex;
+  flex: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-end;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  height: 28px;
+  width: 100%;
+  padding-left: 5px;
+}
+.armure .aData div.main label span {
+  width: max-content;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+.armure .aData div.main label input {
+  width: 100%;
+  border: 0px;
+  background: transparent;
+  border-radius: 0px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.armure .description {
+  margin-top: 5px;
+}
+.dice-roll .difficulte {
+  margin-top: 5px;
+  font-size: 13px;
+}
+.dice-roll span.description {
+  display: inline-block;
+  width: 100%;
+  text-align: justify;
+  padding: 5px;
+  font-size: 13px;
+  word-break: break-all;
+}
+.dice-roll .dice-rcritique {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  flex: 0;
+  font-size: var(--font-size-20);
+  font-weight: bold;
+  color: green;
+  position: relative;
+  line-height: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 3px;
+  box-shadow: 0 0 2px #fff inset;
+  word-break: break-all;
+  font-variant: small-caps;
+}
+.dice-roll .dice-edramatique {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  flex: 0;
+  font-size: var(--font-size-20);
+  font-weight: bold;
+  color: red;
+  position: relative;
+  line-height: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 3px;
+  box-shadow: 0 0 2px #fff inset;
+  word-break: break-all;
+  font-variant: small-caps;
+}

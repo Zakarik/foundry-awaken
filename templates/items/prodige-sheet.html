@@ -1,0 +1,47 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+    <header class="sheet-header flexrow">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="flexcol aData">
+            <h1 class="prodigename">
+                <input name="name" type="text" value="{{data.name}}" placeholder="{{localize "AWAKEN.Nom"}}" />
+                <input name="data.rang" type="number" title="{{localize "AWAKEN.PRODIGES.Rang"}}" value="{{systemData.rang}}" />
+            </h1>
+            <div class="main">
+                <label class="famille">
+                    <span>{{localize "AWAKEN.PRODIGES.Famille"}} : </span>
+                    <select name="data.famille">
+                        {{#select systemData.famille}}
+                        <option value="esprit">{{localize "AWAKEN.PRODIGES.Esprit"}}</option>
+                        <option value="corps">{{localize "AWAKEN.PRODIGES.Corps"}}</option>
+                        <option value="illusion">{{localize "AWAKEN.PRODIGES.Illusion"}}</option>
+                        <option value="realite">{{localize "AWAKEN.PRODIGES.Realite"}}</option>
+                        {{/select}}
+                    </select>
+                </label>
+                
+                <select name="data.type" class="type">
+                    {{#select systemData.type}}
+                    <option value="instinctif">{{localize "AWAKEN.PRODIGES.TYPES.Instinctif"}}</option>
+                    <option value="affectif">{{localize "AWAKEN.PRODIGES.TYPES.Affectif"}}</option>
+                    <option value="instinctifaffectif">{{localize "AWAKEN.PRODIGES.TYPES.InstinctifAffectif"}}</option>
+                    {{/select}}
+                </select>
+    
+                <label class="activation">
+                    <span>{{localize "AWAKEN.PRODIGES.Activation"}} : </span>
+                    <input type="text" name="data.activation" value="{{systemData.activation}}" />
+                </label>
+    
+                <label class="duree">
+                    <span>{{localize "AWAKEN.PRODIGES.Duree"}} : </span>
+                    <input type="text" name="data.duree" value="{{systemData.duree}}" />
+                </label>
+            </div>
+        </div>
+    </header>
+    <div class="description">
+        <h2 class="header-mTitle">{{localize "AWAKEN.Description"}}</h2>
+
+        {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

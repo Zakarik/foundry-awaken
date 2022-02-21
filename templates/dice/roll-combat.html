@@ -1,0 +1,30 @@
+<div class="dice-roll">
+    {{#if flavor}}
+    <div class="dice-flavor">{{flavor}}</div>
+    {{/if}}
+    <div class="dice-result">
+        <div class="dice-formula">{{awaken.label}}</div>
+        {{#if awaken.notRoll}}
+            <h4 class="dice-total">{{localize "AWAKEN.VITALITE.PasAction"}}</h4>
+
+            {{else}}
+
+            {{{tooltip}}}
+            <h4 class="dice-total">{{total}} {{awaken.success}}</h4>
+            {{#if awaken.isAttaque}}
+            <h4 class="dice-total difficulte">{{awaken.combatArme}}</h4>
+            <h4 class="dice-total difficulte">{{awaken.combatType}}</h4>
+            <h4 class="dice-total difficulte">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.Degats"}} : {{awaken.combatDgts}}</h4>
+            <h4 class="dice-total difficulte">{{{awaken.combatTypeDegats}}}</h4>
+            <span class="description">{{{awaken.combatDescription}}}</span>
+            {{/if}}
+
+            {{#if awaken.hasCritique}}
+            <h4 class="dice-rcritique">{{localize "AWAKEN.ROLL.RCritique"}}</h4>
+            {{/if}}
+            {{#if awaken.hasFail}}
+            <h4 class="dice-edramatique">{{localize "AWAKEN.ROLL.EDramatique"}}</h4>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>

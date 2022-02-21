@@ -1,0 +1,35 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+    <header class="sheet-header flexrow">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="flexcol aData">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="{{localize "AWAKEN.Nom"}}" />
+            </h1>
+            <div class="main">
+                <select class="type" name="data.type">
+                    {{#select systemData.type}}
+                    <option value="contact">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPE.Contact"}}</option>
+                    <option value="distance">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPE.Distance"}}</option>
+                    {{/select}}
+                </select>
+                
+                <label class="degats">
+                    <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.Degats"}} : </span>
+                    <input class="score" type="number" name="data.degats" value="{{systemData.degats}}" />
+                </label>
+
+                <select class="typedgts" name="data.typeDegats">
+                    {{#select systemData.typeDegats}}
+                    <option value="superficiels">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPEDGTS.Superficiels"}}</option>
+                    <option value="mortels">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPEDGTS.Mortels"}}</option>
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+    </header>
+    <div class="description">
+        <h2 class="header-mTitle">{{localize "AWAKEN.Description"}}</h2>
+
+        {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+</form>

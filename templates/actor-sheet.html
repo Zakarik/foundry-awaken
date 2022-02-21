@@ -1,0 +1,718 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header flexrow">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="flexcol aData">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="{{localize "AWAKEN.Nom"}}" />
+            </h1>
+            
+            <label>
+                <span>{{localize "AWAKEN.Personnalite"}} : </span>
+                <input type="text" name="data.personnalite" value="{{systemData.personnalite}}" />
+            </label>
+            <label>
+                <span>{{localize "AWAKEN.Origine"}} : </span>
+                <input type="text" name="data.origine" value="{{systemData.origine}}" />
+            </label>
+            <label>
+                <span>{{localize "AWAKEN.Ordre"}} : </span>
+                <input type="text" name="data.ordre" value="{{systemData.ordre}}" />
+            </label>
+
+            {{!-- Sheet Tab Navigation --}}
+            <nav class="sheet-tabs tabs" data-group="primary">
+                <a class="item" data-tab="personnage">{{localize "AWAKEN.Personnage"}}</a>
+                <a class="item" data-tab="attributsCompetences">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.Label"}}</a>
+                <a class="item" data-tab="prodiges">{{localize "AWAKEN.PRODIGES.Label"}}</a>
+                <a class="item" data-tab="combat">{{localize "AWAKEN.COMBAT.Label"}}</a>
+            </nav>
+        </div>
+    </header>
+
+    
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        
+        {{!-- Personnage Tab --}}
+        <div class="tab description" data-group="primary" data-tab="personnage">
+            <div class="flexrow">
+                <div class="flexcol">
+                    <div class="reputation">
+                        <h1>
+                            {{localize "AWAKEN.Reputation"}} :
+                            <a class="item-control item-create" title="Create Item" data-type="reputation"><i class="fas fa-plus"></i></a>
+                        </h1>
+                        {{#each actor.reputation as | key reputation|}}
+                        <div class="expand rItems" data-item-id="{{key._id}}">
+                            <span class="summary">
+                                <i class="fa fa-plus-square buttonExpand"></i>
+                                {{key.name}}
+
+                                <div class="gestionButton">
+                                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </span>
+                            <span class="options hide">
+                                {{{key.data.description}}}
+                            </span>
+                        </div>
+                        {{/each}}
+                    </div>
+    
+                    <div class="equipement">
+                        <h1>
+                            {{localize "AWAKEN.EQUIPEMENT.Label"}} :
+                            <a class="item-control item-create" title="Create Item" data-type="equipement"><i class="fas fa-plus"></i></a>
+                        </h1>
+                        {{#each actor.equipement as | key equipement|}}
+                        <div class="expand rItems" data-item-id="{{key._id}}">
+                            <span class="summary">
+                                <i class="fa fa-plus-square buttonExpand"></i>
+                                {{key.name}}
+
+                                <div class="gestionButton">
+                                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </span>
+                            <span class="options hide">
+                                {{{key.data.description}}}
+                            </span>
+                        </div>
+                        {{/each}}
+                        <label>
+                            <span>{{localize "AWAKEN.EQUIPEMENT.Richesse"}} : </span>
+                            <input type="number" name="data.richesse" value="{{systemData.richesse}}" min="0" />
+                        </label>
+                    </div>
+                </div>
+    
+                <div class="vertus flexrow">
+                                     
+                    <div class="chance">
+                        <h2>
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus" data-label='{{localize "AWAKEN.VERTUS.Chance"}}' data-vertus="chance" />
+                            {{localize "AWAKEN.VERTUS.Chance"}}
+                        </h2>
+                        <input type="number" class="vertusValue" data-type="chance"  name="data.vertus.chance.value" min="{{systemData.vertus.chance.min}}" max="{{systemData.vertus.chance.max}}" value="{{systemData.vertus.chance.value}}" />
+    
+                        {{#each data.data.vertus.chance.depense as | key chance|}}
+                            {{#if key.show}}
+                                <div class="line">
+                                    <button type="action" class="chance {{#if key.used}} checked {{/if}}" data-number="{{key.label}}" data-type="chance">{{key.label}}</button>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                    
+                    <div class="courage">
+                        <header>
+                           <span class="header-bTitle">{{localize "AWAKEN.VERTUS.Label"}}</span>
+                        </header>
+    
+                        <input type="number" name="data.vertus.courage.value" min="{{systemData.vertus.courage.min}}" max="{{systemData.vertus.courage.max}}" value="{{systemData.vertus.courage.value}}">
+                        
+                        <span class="space"></span>
+    
+                        <h2>
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus" data-label='{{localize "AWAKEN.VERTUS.Courage"}}' data-vertus="courage" />
+                            {{localize "AWAKEN.VERTUS.Courage"}}
+                        </h2>
+                    </div>
+    
+                    <div class="volonte">
+                        <h2>
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus" data-label='{{localize "AWAKEN.VERTUS.Volonte"}}' data-vertus="volonte" />
+                            {{localize "AWAKEN.VERTUS.Volonte"}}
+                        </h2>
+    
+                        <input type="number" class="vertusValue" data-type="volonte" name="data.vertus.volonte.value" min="{{systemData.vertus.volonte.min}}" max="{{systemData.vertus.volonte.max}}" value="{{systemData.vertus.volonte.value}}">
+    
+                        {{#each data.data.vertus.volonte.depense as | key volonte|}}
+                            {{#if key.show}}
+                                <div class="line">
+                                    <button type="action" class="volonte {{#if key.used}} checked {{/if}}" data-number="{{key.label}}" data-type="volonte">{{key.label}}</button>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>            
+
+            <h2 class="header-mTitle">{{localize "AWAKEN.Description"}}</h2>
+
+            {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <div class="tab attributsCompetences flexrow" data-group="primary" data-tab="attributsCompetences">
+            {{#each data.data.attributs as | key attributs|}}
+                <div class="attribut">
+                    <header class="{{attributs}}">
+                        {{#if key.first}}
+                            <span class="header-bTitle">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.Attributs"}}</span>
+                            {{else}}
+                            <span class="header-space"></span>
+                        {{/if}}
+                        <h1>{{key.label}}</h1>
+                    </header>
+                    <div class="blockStats">
+                        {{#if key.first}}
+                            <span class="header-bTitle">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.Competences"}}</span>
+                            {{else}}
+                            <span class="header-spaceComp"></span>
+                        {{/if}}
+                        <div class="score">
+                            <input type="number" class="{{attributs}}" name="data.attributs.{{attributs}}.value" value="{{key.value}}" min="{{key.min}}" />
+                        </div>
+
+                        {{#each key.competences as | keyComp competences|}}
+                            <div class="competence">
+                                <div class="base">
+                                    <h2>{{keyComp.label}}</h2>
+
+                                    <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{keyComp.label}}" data-attribut="{{key.value}}" data-competence="{{keyComp.value}}" data-malus="{{key.malus}}"/>
+                                    <input type="number" name="data.attributs.{{attributs}}.competences.{{competences}}.value" value="{{keyComp.value}}" min="{{keyComp.min}}" max="{{keyComp.max}}" />
+                                </div>
+                                <div class="experience">
+                                    <button type="action" data-type="competence" data-number="1" data-attribut="{{attributs}}" data-competence="{{competences}}" class="{{#if keyComp.experience.c1}} checked {{else}} unchecked {{/if}}"></button>
+                                    <button type="action" data-type="competence" data-number="2" data-attribut="{{attributs}}" data-competence="{{competences}}" class="{{#if keyComp.experience.c2}} checked {{else}} unchecked {{/if}}"></button>
+                                    <button type="action" data-type="competence" data-number="3" data-attribut="{{attributs}}" data-competence="{{competences}}" class="{{#if keyComp.experience.c3}} checked {{else}} unchecked {{/if}}"></button>
+                                    <button type="action" data-type="competence" data-number="4" data-attribut="{{attributs}}" data-competence="{{competences}}" class="{{#if keyComp.experience.c4}} checked {{else}} unchecked {{/if}}"></button>
+                                    <button type="action" data-type="competence" data-number="5" data-attribut="{{attributs}}" data-competence="{{competences}}" class="{{#if keyComp.experience.c5}} checked {{else}} unchecked {{/if}}"></button>
+                                </div>
+                                {{#each keyComp.specialisation as | keySpe specialisation|}}
+                                <div class="specialisation rItems" data-item-id="{{keySpe._id}}">
+                                    <div class="gestionButton">
+                                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                                    </div>
+
+                                    <span>{{keySpe.name}}</span>
+
+                                    <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{keyComp.label}} ({{keySpe.name}})" data-attribut="{{key.value}}" data-competence="{{keyComp.value}}" data-bonus="1" data-malus="{{key.malus}}"/>
+                                </div>
+                                {{/each}}
+                                <div class="create">
+                                    <a class="item-control item-create" title="Create Item" data-type="specialisation" data-competence="{{competences}}"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+        <div class="tab prodiges" data-group="primary" data-tab="prodiges">
+            <header>
+                <span class="header-bTitle">{{localize "AWAKEN.PRODIGES.Label"}}</span>
+            </header>
+
+            <div class="prodigeCol">
+                {{#each data.data.prodiges as | key prodiges|}}
+                <div>
+                    <div class="base">
+                        <h2 class="{{prodiges}}">
+                            {{key.label}}
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{key.label}}" data-attribut="{{key.value}}" data-difficulte="true" />
+                        </h2>
+                        <input type="number" name="data.prodiges.{{prodiges}}.value" value="{{key.value}}" min="{{key.min}}" />
+        
+                        <div class="experience">
+                            <button type="action" data-type="prodige" data-number="1" data-prodiges="{{prodiges}}" class="{{#if key.experience.c1}} checked {{else}} unchecked {{/if}}"></button>
+                            <button type="action" data-type="prodige" data-number="2" data-prodiges="{{prodiges}}" class="{{#if key.experience.c2}} checked {{else}} unchecked {{/if}}"></button>
+                            <button type="action" data-type="prodige" data-number="3" data-prodiges="{{prodiges}}" class="{{#if key.experience.c3}} checked {{else}} unchecked {{/if}}"></button>
+                            <button type="action" data-type="prodige" data-number="4" data-prodiges="{{prodiges}}" class="{{#if key.experience.c4}} checked {{else}} unchecked {{/if}}"></button>
+                            <button type="action" data-type="prodige" data-number="5" data-prodiges="{{prodiges}}" class="{{#if key.experience.c5}} checked {{else}} unchecked {{/if}}"></button>
+                        </div>
+                    </div>
+                    {{#each key.liste as | keyProdige prodige|}}
+                    <div class="prodigeList expand rItems" data-item-id="{{keyProdige._id}}">
+                        <div class="line summary">
+                            <i class="fa fa-plus-square buttonExpand"></i>
+                            <h3>{{keyProdige.name}}</h3>
+                            <label class="rang">
+                                <span class="label">{{localize "AWAKEN.PRODIGES.Rang"}}</span>
+                                <span class="score">{{keyProdige.data.rang}}</span>
+                            </label>
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{key.label}} / {{keyProdige.name}}" data-attribut="{{key.value}}" data-type="{{keyProdige.data.labelType}}" data-activation="{{keyProdige.data.activation}}" data-duree="{{keyProdige.data.duree}}" data-description="{{{keyProdige.data.description}}}" data-prodige="true" />
+                            <div class="gestionButton">
+                                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </div>
+                        <div class="line options hide">
+                            <span class="type">{{keyProdige.data.labelType}}</span>
+                        </div>
+                        <div class="line options hide">
+                            <label class="activation">
+                                <span class="label">{{localize "AWAKEN.PRODIGES.Activation"}} : </span>
+                                <span class="data">{{keyProdige.data.activation}}</span>
+                            </label>
+                            <label class="duree">
+                                <span class="label">{{localize "AWAKEN.PRODIGES.Duree"}} : </span>
+                                <span class="data">{{keyProdige.data.duree}}</span>
+                            </label>
+                        </div>
+                        <span class="description options hide">
+                            {{{keyProdige.data.description}}}
+                        </span>
+                    </div>
+                    {{/each}}
+                    <div class="create">
+                        <a class="item-control item-create" title="Create Item" data-type="prodige" data-famille="{{prodiges}}"><i class="fas fa-plus"></i></a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="corruption">
+                <div class="main">
+                    <div class="buttons">
+                        <button type="action" data-number="1" class="endurance {{#if systemData.corruption.check.c1}} checked {{/if}}">1</button>
+                        <button type="action" data-number="2" class="endurance {{#if systemData.corruption.check.c2}} checked {{/if}}">2</button>
+                        <button type="action" data-number="3" class="endurance {{#if systemData.corruption.check.c3}} checked {{/if}}">3</button>
+                        <button type="action" data-number="4" class="endurance {{#if systemData.corruption.check.c4}} checked {{/if}}">4</button>
+                        <button type="action" data-number="5" class="endurance {{#if systemData.corruption.check.c5}} checked {{/if}}">5</button>
+                        <button type="action" data-number="6" class="endurance {{#if systemData.corruption.check.c6}} checked {{/if}}">6</button>
+                        <button type="action" data-number="7" class="endurance {{#if systemData.corruption.check.c7}} checked {{/if}}">7</button>
+                        <button type="action" data-number="8" class="endurance {{#if systemData.corruption.check.c8}} checked {{/if}}">8</button>
+                        <button type="action" data-number="9" class="endurance {{#if systemData.corruption.check.c9}} checked {{/if}}">9</button>
+                        <button type="action" data-number="10" class="endurance {{#if systemData.corruption.check.c10}} checked {{/if}}">10</button>
+                        <button type="action" data-number="11" class="endurance {{#if systemData.corruption.check.c11}} checked {{/if}}">11</button>
+                        <button type="action" data-number="12" class="endurance {{#if systemData.corruption.check.c12}} checked {{/if}}">12</button>
+                        <button type="action" data-number="13" class="endurance {{#if systemData.corruption.check.c13}} checked {{/if}}">13</button>
+                        <button type="action" data-number="14" class="endurance {{#if systemData.corruption.check.c14}} checked {{/if}}">14</button>
+                        <button type="action" data-number="15" class="endurance {{#if systemData.corruption.check.c15}} checked {{/if}}">15</button>
+                    </div>
+                    <div class="max">
+                        <h3>{{localize "AWAKEN.CORRUPTION.Max"}}</h3>
+                        <span class="spacesmall"></span>
+                        <span class="score">9</span>
+                        <span class="score">8</span>
+                        <span class="score">7</span>
+                        <span class="score">6</span>
+                        <span class="score">5</span>
+                        <span class="score">4</span>
+                        <span class="score">3</span>
+                        <span class="score">2</span>
+                        <span class="score">1</span>
+                    </div>
+                    <div class="malus">
+                        <h3>{{localize "AWAKEN.CORRUPTION.Malus"}}</h3>
+                        <span class="spacelarge"></span>
+                        <span class="score">-1</span>
+                        <span class="score">-2</span>
+                        <span class="score">-3</span>
+                        <span class="score">-3</span>
+                        <span class="score">-4</span>
+                    </div>
+                </div>
+                <header>
+                    <h2 class="header-bTitle">
+                        {{localize "AWAKEN.CORRUPTION.Label"}}
+                    </h2>
+                </header>
+            </div>            
+        </div>
+
+        <div class="tab combat flexcol" data-group="primary" data-tab="combat">
+            <div class="flexrow">
+                <div class="flexcol colFlexible">
+                    <div class="armementEquip">
+                        <header>
+                            <span class="header-bTitle">{{localize "AWAKEN.COMBAT.ArmementEquip"}}</span>
+                        </header>
+                        {{#each actor.armement.wear as | key armement|}}
+                        <div class="liste expand rItems" data-item-id="{{key._id}}">
+                            <div class="summary">
+                                <i class="fa fa-plus-square buttonExpand"></i>
+                                <span class="name">{{key.name}}</span>
+                                <img class="unwear" title='{{localize "AWAKEN.EQUIPEMENT.Desequiper"}}' src="systems/awaken/assets/icons/weaponsUnwear.svg">
+                            </div>
+                            <div class="main">
+                                <span class="labelType">{{key.data.labelType}}</span>
+                                <label class="degats">
+                                    <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.Degats"}} : </span>
+                                    <span class="score">{{key.data.degats}}</span>
+                                </label>
+                            </div>
+                            <div class="gestionButton">
+                                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <span class="typeDegats">{{key.data.labelTypeDegats}}</span>
+                            <span class="description options hide">
+                                {{{key.data.description}}}
+                            </span>
+                        </div>
+                        {{/each}}
+                    </div>
+        
+                    <div class="armement">
+                        <header>
+                            <div class="create">
+                                <a class="item-control item-create" title="Create Item" data-type="armement"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <span class="header-bTitle">{{localize "AWAKEN.COMBAT.Armement"}}</span>
+                        </header>
+                        {{#each actor.armement.unwear as | key armement|}}
+                        <div class="liste expand rItems" data-item-id="{{key._id}}">
+                            <div class="summary">
+                                <i class="fa fa-plus-square buttonExpand"></i>
+                                <span class="name">{{key.name}}</span>
+                                <img class="wear" title='{{localize "AWAKEN.EQUIPEMENT.Equiper"}}' src="systems/awaken/assets/icons/weaponsWear.svg">
+                            </div>
+                            <div class="main">
+                                <span class="labelType">{{key.data.labelType}}</span>
+                                <label class="degats">
+                                    <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.Degats"}} : </span>
+                                    <span class="score">{{key.data.degats}}</span>
+                                </label>
+                            </div>
+                            <div class="gestionButton">
+                                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <span class="typeDegats">{{key.data.labelTypeDegats}}</span>
+                            <span class="description options hide">
+                                {{{key.data.description}}}
+                            </span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="flexcol colFlexible">
+                    <div class="armureEquip">
+                        <header>
+                            <span class="header-bTitle">
+                                {{localize "AWAKEN.COMBAT.ArmureEquip"}}
+                            </span>
+                        </header>
+                        {{#each actor.armure.wear as | key armure|}}
+                        <div class="liste expand rItems" data-item-id="{{key._id}}">
+                            <div class="summary">
+                                <i class="fa fa-plus-square buttonExpand"></i>
+                                <span class="name">{{key.name}}</span>
+                                <img class="unwear" title='{{localize "AWAKEN.EQUIPEMENT.Equiper"}}' src="systems/awaken/assets/icons/armorUnwear.svg">
+                            </div>
+                            <div class="main">
+                                <label class="malusPhysique">
+                                    <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.MalusPhysique"}} : </span>
+                                    <span class="score">{{key.data.malusPhysique}}</span>
+                                </label>
+                            </div>
+
+                            <div class="gestionButton">
+                                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                            
+                            <label class="bonusDefense">
+                                <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.BonusDefense"}} : </span>
+                                <span class="score">{{key.data.bonusDefense}}</span>
+                            </label>
+            
+                            <label class="bonusContact">
+                                <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.BonusContact"}} : </span>
+                                <span class="score">{{key.data.bonusContact}}</span>
+                            </label>
+
+                            <span class="description options hide">
+                                {{{key.data.description}}}
+                            </span>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <div class="armure">
+                        <header>
+                            <div class="create">
+                                <a class="item-control item-create" title="Create Item" data-type="armure"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <span class="header-bTitle">{{localize "AWAKEN.COMBAT.Armure"}}</span>
+                        </header>
+                        {{#each actor.armure.unwear as | key armure|}}
+                        <div class="liste expand rItems" data-item-id="{{key._id}}">
+                            <div class="summary">
+                                <i class="fa fa-plus-square buttonExpand"></i>
+                                <span class="name">{{key.name}}</span>
+                                <img class="wear" title='{{localize "AWAKEN.EQUIPEMENT.Equiper"}}' src="systems/awaken/assets/icons/armorWear.svg">
+                            </div>
+                            <div class="main">
+                                <label class="malusPhysique">
+                                    <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.MalusPhysique"}} : </span>
+                                    <span class="score">{{key.data.malusPhysique}}</span>
+                                </label>
+                            </div>
+
+                            <div class="gestionButton">
+                                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                            </div>
+                            
+                            <label class="bonusDefense">
+                                <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.BonusDefense"}} : </span>
+                                <span class="score">{{key.data.bonusDefense}}</span>
+                            </label>
+            
+                            <label class="bonusContact">
+                                <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.BonusContact"}} : </span>
+                                <span class="score">{{key.data.bonusContact}}</span>
+                            </label>
+
+                            <span class="description options hide">
+                                {{{key.data.description}}}
+                            </span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="flexcol colFixe">
+                    <div class="reserves">
+                        <header>
+                            <span class="header-bTitle">{{localize "AWAKEN.COMBAT.RESERVES.Label"}}</span>
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollCombat" data-label="Combat" data-attaque="{{data.data.reserves.attaque.value}}" data-defense="{{data.data.reserves.defense.value}}" data-arme="{{data.data.armement.nom}}" data-type="{{data.data.armement.type}}" data-typedegats="{{data.data.armement.typeDegats}}" data-dgts="{{data.data.armement.dgts}}" data-description="{{data.data.armement.description}}" data-malus="true" />
+                        </header>
+                        <label>
+                            <span class="label">{{localize "AWAKEN.COMBAT.RESERVES.Modificateur"}} : </span>
+                            <input type="number" name="data.reserves.modificateur" value="{{systemData.reserves.modificateur}}" />
+                        </label>
+                        <label>
+                            <span class="label">{{localize "AWAKEN.COMBAT.RESERVES.Total"}} : </span>
+                            <span class="score">{{systemData.reserves.total}}</span>
+                        </label>
+                        <label>
+                            <span class="label">{{localize "AWAKEN.COMBAT.RESERVES.Attaque"}} : </span>
+                            <input type="number" class="reserveAttaque" name="data.reserves.attaque.value" value="{{systemData.reserves.attaque.value}}" min="{{systemData.reserves.attaque.min}}" />
+                        </label>
+                        <label>
+                            <span class="label">{{localize "AWAKEN.COMBAT.RESERVES.Defense"}} : </span>
+                            <input type="number" class="reserveDefense" name="data.reserves.defense.value" value="{{systemData.reserves.defense.value}}" min="{{systemData.reserves.defense.min}}" />
+                        </label>
+                    </div>
+
+                    <div class="stats">
+                        <header>
+                            <span class="header-bTitle">{{localize "AWAKEN.COMBAT.Label"}}</span>
+                        </header>
+        
+                        <h2>{{localize "AWAKEN.COMBAT.MainsNues"}}</h2>
+        
+                        <div class="block">
+                            <div class="colG">
+                                <span>{{localize "AWAKEN.COMBAT.PhysiqueShort"}}</span>
+                                <span>{{localize "AWAKEN.COMBAT.Armure"}}</span>
+                            </div>
+        
+                            <span>{{systemData.combat.mainsNues}}</span>
+        
+                            <div class="colD">
+                                <span>{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Agilite"}}</span>
+                                <span>{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Melee"}}</span>
+                            </div>
+                        </div>
+        
+                        <h2>{{localize "AWAKEN.COMBAT.AuContact"}}</h2>
+        
+                        <div class="block">
+                            <div class="colG">
+                                <span>{{localize "AWAKEN.COMBAT.PhysiqueShort"}}</span>
+                                <span>{{localize "AWAKEN.COMBAT.Armure"}}</span>
+                            </div>
+        
+                            <span>{{systemData.combat.auContact}}</span>
+        
+                            <div class="colD">
+                                <span>{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Agilite"}}</span>
+                                <span>{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Melee"}}</span>
+                            </div>
+        
+                            <div class="colB">
+                                <span></span>
+                                <span>{{localize "AWAKEN.COMBAT.Arme"}}</span>
+                            </div>
+                        </div>
+        
+                        <h2>{{localize "AWAKEN.COMBAT.ADistance"}}</h2>
+        
+                        <div class="block">
+                            <div class="colG">
+                                <span>{{localize "AWAKEN.COMBAT.PhysiqueShort"}}</span>
+                                <span>{{localize "AWAKEN.COMBAT.Armure"}}</span>
+                            </div>
+        
+                            <span>{{systemData.combat.aDistance}}</span>
+        
+                            <div class="colD">
+                                <span>{{localize "AWAKEN.COMBAT.ArmeDistanceShort"}}</span>
+                                <span>{{localize "AWAKEN.COMBAT.Arme"}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="enduranceVitalite">
+                <div class="endurance">
+                    <div class="line">
+                        {{#if systemData.vitalite.liste.formeOlympique.v7.active}}
+                            <header>
+                                <span class="titre">{{localize "AWAKEN.VITALITE.FormeOlympique"}}</span>
+                                <span class="space"></span>
+                            </header>
+    
+                            {{#each systemData.vitalite.liste.formeOlympique as | key vitalite|}}
+                                <div class="block">
+                                    {{#if key.active}}
+                                        <div>
+                                            <button type="action" data-num="{{key.label}}" data-sub="1" class="sub1 {{#if key.s1Checked}} checked {{/if}}">1</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="main {{#if key.s2Checked}} checked {{/if}}">{{key.label}}</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="sub2 {{#if key.s2Checked}} checked {{/if}}">2</button>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                    </div>
+
+                    <div class="line">
+                        {{#if systemData.vitalite.liste.normal.v4.active}}
+                            <header>
+                                <span class="titre">{{localize "AWAKEN.VITALITE.Normal"}}</span>
+                                <span class="space"></span>
+                            </header>
+    
+                            {{#each systemData.vitalite.liste.normal as | key vitalite|}}
+                                <div class="block">
+                                    {{#if key.active}}
+                                        <div>
+                                            <button type="action" data-num="{{key.label}}" data-sub="1" class="sub1 {{#if key.s1Checked}} checked {{/if}}">1</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="main {{#if key.s2Checked}} checked {{/if}}">{{key.label}}</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="sub2 {{#if key.s2Checked}} checked {{/if}}">2</button>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                        <div class="block"></div>
+                    </div>
+
+                    <div class="line">
+                        {{#if systemData.vitalite.liste.blesse.v2.active}}
+                            <header>
+                                <span class="titre">{{localize "AWAKEN.VITALITE.Blesse"}}</span>
+                                <span class="space"></span>
+                            </header>
+    
+                            {{#each systemData.vitalite.liste.blesse as | key vitalite|}}
+                                <div class="block">
+                                    {{#if key.active}}
+                                        <div>
+                                            <button type="action" data-num="{{key.label}}" data-sub="1" class="sub1 {{#if key.s1Checked}} checked {{/if}}">1</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="main {{#if key.s2Checked}} checked {{/if}}">{{key.label}}</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="sub2 {{#if key.s2Checked}} checked {{/if}}">2</button>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                        <div class="blockEndurance">
+                            <header>
+                                <span class="header-bTitle">{{localize "AWAKEN.VITALITE.Endurance"}}</span>
+                            </header>
+                            <span class="score">{{systemData.endurance.value}}</span>
+                        </div>
+                    </div>
+
+                    <div class="line">
+                        {{#if systemData.vitalite.liste.grievementBlesse.v0.active}}
+                            <header>
+                                <span class="titre">{{localize "AWAKEN.VITALITE.GrievementBlesse"}}</span>
+                                <span class="space"></span>
+                            </header>
+    
+                            {{#each systemData.vitalite.liste.grievementBlesse as | key vitalite|}}
+                                <div class="block">
+                                    {{#if key.active}}
+                                        <div>
+                                            <button type="action" data-num="{{key.label}}" data-sub="1" class="sub1 {{#if key.s1Checked}} checked {{/if}}">1</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="main {{#if key.s2Checked}} checked {{/if}}">{{key.label}}</button>
+                                            <button type="action" data-num="{{key.label}}" data-sub="2" class="sub2 {{#if key.s2Checked}} checked {{/if}}">2</button>
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                        <div class="blockModEndurance">
+                            <header>
+                                <span class="header-bTitle">{{localize "AWAKEN.VITALITE.ModEndurance"}}</span>
+                            </header>
+                            <input type="number" name="data.endurance.modificateur" value="{{systemData.endurance.modificateur}}" />
+                        </div>
+                    </div>
+
+                    <div class="lastLine">
+                        <span class="space"></span>
+                        <header>
+                            <span class="titre">{{localize "AWAKEN.VITALITE.MourantMort"}}</span>
+                        </header>
+                        <div class="lastBlock">
+                            <button type="action" data-num="-1" class="last {{#if systemData.vitalite.liste.mourant.v1}} checked {{/if}}">-1</button>
+                        </div>                    
+                        <div class="lastBlock">
+                            <button type="action" data-num="-2" class="last {{#if systemData.vitalite.liste.mourant.v2}} checked {{/if}}">-2</button>
+                        </div>                    
+                        <div class="lastBlock">
+                            <button type="action" data-num="-3" class="last {{#if systemData.vitalite.liste.mourant.v3}} checked {{/if}}">-3</button>
+                        </div>                    
+                        <div class="lastBlock">
+                            <button type="action" data-num="-4" class="last {{#if systemData.vitalite.liste.mourant.v4}} checked {{/if}}">-4</button>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="vitalite">
+                    <div class="line">
+                        <header>
+                            <span class="header-bTitle">{{localize "AWAKEN.VITALITE.Label"}}</span>
+                        </header>
+                    </div>
+                    <div class="line">
+                        <span class="label">
+                            {{localize "AWAKEN.VITALITE.MaxTest"}}
+                        </span>
+                        <span class="score">
+                            12 / 12 / 11
+                        </span>
+                    </div>
+                    <div class="line">
+                        <span class="label">
+                            {{localize "AWAKEN.VITALITE.MaxTest"}}
+                        </span>
+                        <span class="score">
+                            10 / 9
+                        </span>
+                    </div>
+                    <div class="line">
+                        <span class="label">
+                            {{localize "AWAKEN.VITALITE.MaxTest"}}
+                        </span>
+                        <span class="score">
+                            8 / 5
+                        </span>
+                    </div>
+                    <div class="line">
+                        <span class="label">
+                            {{localize "AWAKEN.VITALITE.PasAction"}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

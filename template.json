@@ -1,0 +1,443 @@
+{
+  "Actor": {
+    "types": ["pj"],
+    "pj": {
+      "personnalite": "",
+      "origine": "",
+      "ordre": "",
+      "description": "",
+      "richesse": 0,
+      "corruption": {
+        "value":0
+      },
+      "vitalite":{
+        "value": 0,
+        "subValue": 2,
+        "liste": {
+          "formeOlympique": {
+            "v10": {
+              "label": 10
+            },
+            "v9": {
+              "label": 9
+            },
+            "v8": {
+              "label": 8
+            },
+            "v7": {
+              "label": 7
+            }
+          },
+          "normal": {
+            "v6": {
+              "label": 6
+            },
+            "v5": {
+              "label": 5
+            },
+            "v4": {
+              "label": 4
+            }
+          },
+          "blesse": {
+            "v3": {
+              "label": 3
+            },
+            "v2": {
+              "label": 2
+            }
+          },
+          "grievementBlesse": {
+            "v1": {
+              "label": 1
+            },
+            "v0": {
+              "label": 0
+            }
+          },
+          "mourant":{
+            "v1": false,
+            "v2": false,
+            "v3": false,
+            "v4": false
+          }
+        }
+      },
+      "endurance":{
+        "modificateur": 0
+      },
+      "reserves":{
+        "modificateur": 0,
+        "total": 0,
+        "attaque": {
+          "value":0,
+          "min":0
+        },
+        "defense": {
+          "value":0,
+          "min":0
+        }
+      },
+      "vertus": {
+        "chance":{
+          "value":1,
+          "min":1,
+          "max":5,
+          "depense":{
+            "b0":{
+              "label":0,
+              "show":true,
+              "used":false
+            },
+            "b1":{
+              "label":1,
+              "show":true,
+              "used":false
+            },
+            "b2":{
+              "label":2,
+              "show":false,
+              "used":false
+            },
+            "b3":{
+              "label":3,
+              "show":false,
+              "used":false
+            },
+            "b4":{
+              "label":4,
+              "show":false,
+              "used":false
+            },
+            "b5":{
+              "label":5,
+              "show":false,
+              "used":false
+            }
+          }
+        },
+        "courage":{
+          "value":1,
+          "min":1,
+          "max":5
+        },
+        "volonte":{
+          "value":1,
+          "min":1,
+          "max":5,
+          "depense":{
+            "b0":{
+              "label":0,
+              "show":true,
+              "used":false
+            },
+            "b1":{
+              "label":1,
+              "show":true,
+              "used":false
+            },
+            "b2":{
+              "label":2,
+              "show":false,
+              "used":false
+            },
+            "b3":{
+              "label":3,
+              "show":false,
+              "used":false
+            },
+            "b4":{
+              "label":4,
+              "show":false,
+              "used":false
+            },
+            "b5":{
+              "label":5,
+              "show":false,
+              "used":false
+            }
+          }
+        }
+      },
+      "attributs":{
+        "social":{
+          "value":1,
+          "min":1,
+          "first":true,
+          "malus":false,
+          "competences":{
+            "expression":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "empathie":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "rhetorique":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "representation":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "negoce":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            }
+          }
+        },
+        "mental":{
+          "value":1,
+          "min":1,
+          "first":false,
+          "malus":false,
+          "competences":{
+            "erudition":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "artisanat":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "medecine":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "savoir":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "perception":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            }
+          }
+        },
+        "physique":{
+          "value":1,
+          "min":1,
+          "first":false,
+          "malus":true,
+          "competences":{
+            "agilite":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "melee":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "discretion":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "armesDistance":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            },
+            "survie":{
+              "value":0,
+              "min":0,
+              "experience":{
+                "c1":false,
+                "c2":false,
+                "c3":false,
+                "c4":false,
+                "c5":false
+              }
+            }
+          }
+        }
+      },
+      "prodiges": {
+        "esprit": {
+          "value":0,
+          "min":0,
+          "experience":{
+            "c1":false,
+            "c2":false,
+            "c3":false,
+            "c4":false,
+            "c5":false
+          }
+        },
+        "illusion": {
+          "value":0,
+          "min":0,
+          "experience":{
+            "c1":false,
+            "c2":false,
+            "c3":false,
+            "c4":false,
+            "c5":false
+          }
+        },
+        "corps": {
+          "value":0,
+          "min":0,
+          "experience":{
+            "c1":false,
+            "c2":false,
+            "c3":false,
+            "c4":false,
+            "c5":false
+          }
+        },
+        "realite": {
+          "value":0,
+          "min":0,
+          "experience":{
+            "c1":false,
+            "c2":false,
+            "c3":false,
+            "c4":false,
+            "c5":false
+          }
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["reputation", "equipement", "specialisation", "prodige", "armement", "armure"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "reputation":{
+      "templates": ["base"]
+    },
+    "equipement":{
+      "templates": ["base"]
+    },
+    "specialisation":{
+      "competence":"expression"
+    },
+    "prodige":{
+      "templates":["base"],
+      "famille":"esprit",
+      "rang":1,
+      "type":"instinctif",
+      "labelType":"",
+      "activation":"",
+      "duree":""
+    },
+    "armement":{
+      "templates":["base"],
+      "type":"contact",
+      "labelType":"",
+      "degats":"0",
+      "typeDegats":"superficiels",
+      "labelTypeDegats":"",
+      "wear":false
+    },
+    "armure":{
+      "templates":["base"],
+      "malusPhysique":0,
+      "bonusDefense":0,
+      "bonusContact":0,
+      "wear":false
+    }
+  }
+}
