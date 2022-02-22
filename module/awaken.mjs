@@ -101,18 +101,22 @@ Hooks.once('init', async function() {
 /* -------------------------------------------- */
 
 Hooks.once("ready", async function() {
-  Hooks.on("hotbarDrop", (bar, data, slot) => createAttributMacro(data, slot));
+  Hooks.on("hotbarDrop", (bar, data, slot) => createMacro(data, slot));
 });
 
-async function createAttributMacro(data, slot) {
+async function createMacro(data, slot) {
   // Create the macro command
   const type = data.type;
   const command = `game.awaken.RollAwakenMacro("${data.actorId}", "${type}", "${data.attr}", "${data.comp}", "${data.itemId}");`;
-  //let macro = game.macros.entities.find(m => (m.name === item.name) && (m.command === command));
 
   let img = "";
 
-  if(type === "specialisation" || type === "prodige") { img = item.img; }
+  if(type === "specialisation" || type === "prodige") { 
+    if(data.itemId != 0) {
+      const item = game.actors.get(data.actorId).items.find(i => i.id === data.itemId);
+      img = item.img;
+    }    
+  }
   if(type === "famille") { 
     switch(data.attr) {
       case "esprit":

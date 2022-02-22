@@ -852,6 +852,33 @@ export class AwakenActorSheet extends ActorSheet {
       type: type,
       data: data
     };
+
+    switch(type) {
+      case "equipement":
+          itemData.img = "systems/awaken/assets/icons/equipement.svg";
+          break;
+
+      case "armement":
+          itemData.img = "systems/awaken/assets/icons/armement.svg";
+          break;
+
+      case "armure":
+          itemData.img = "systems/awaken/assets/icons/armure.svg";
+          break;
+
+      case "prodige":
+          itemData.img = "systems/awaken/assets/icons/prodige.svg";
+          break;
+
+      case "specialisation":
+          itemData.img = "systems/awaken/assets/icons/specialisation.svg";
+          break;
+
+      case "reputation":
+          itemData.img = "systems/awaken/assets/icons/reputation.svg";
+          break;
+    }
+
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.data["type"];
   
