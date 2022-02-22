@@ -696,9 +696,12 @@
   margin-right: 2px;
 }
 .actor .prodiges div.prodigeCol > div div.prodigeList div.line img.roll {
-  width: 28px;
+  width: 29px;
   height: 28px;
-  border: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
   cursor: pointer;
   border-radius: 0px;
 }
@@ -710,12 +713,13 @@
 }
 .actor .prodiges div.prodigeCol > div div.prodigeList div.line label.activation {
   display: flex;
-  width: 50%;
+  width: 100%;
   padding-left: 5px;
 }
 .actor .prodiges div.prodigeCol > div div.prodigeList div.line label.activation span.label {
   font-weight: bold;
   line-height: 28px;
+  white-space: nowrap;
 }
 .actor .prodiges div.prodigeCol > div div.prodigeList div.line label.activation span.data {
   line-height: 28px;
@@ -723,13 +727,13 @@
 }
 .actor .prodiges div.prodigeCol > div div.prodigeList div.line label.duree {
   display: flex;
-  width: calc(50% - 1px);
+  width: 100%;
   padding-left: 5px;
-  border-left: 1px solid black;
 }
 .actor .prodiges div.prodigeCol > div div.prodigeList div.line label.duree span.label {
   font-weight: bold;
   line-height: 28px;
+  white-space: nowrap;
 }
 .actor .prodiges div.prodigeCol > div div.prodigeList div.line label.duree span.data {
   line-height: 28px;
@@ -755,6 +759,7 @@
   text-align: justify;
   padding: 5px;
   margin: 0px;
+  word-break: break-word;
 }
 .actor .prodiges div.prodigeCol > div div.create {
   display: flex;

@@ -95,7 +95,7 @@
                                      
                     <div class="chance">
                         <h2>
-                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus" data-label='{{localize "AWAKEN.VERTUS.Chance"}}' data-vertus="chance" />
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus draggable" data-macroType="vertus" data-macroAttr="chance" data-label='{{localize "AWAKEN.VERTUS.Chance"}}' data-vertus="chance" />
                             {{localize "AWAKEN.VERTUS.Chance"}}
                         </h2>
                         <input type="number" class="vertusValue" data-type="chance"  name="data.vertus.chance.value" min="{{systemData.vertus.chance.min}}" max="{{systemData.vertus.chance.max}}" value="{{systemData.vertus.chance.value}}" />
@@ -119,18 +119,18 @@
                         <span class="space"></span>
     
                         <h2>
-                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus" data-label='{{localize "AWAKEN.VERTUS.Courage"}}' data-vertus="courage" />
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus draggable" data-macroType="vertus" data-macroAttr="courage" data-label='{{localize "AWAKEN.VERTUS.Courage"}}' data-vertus="courage" />
                             {{localize "AWAKEN.VERTUS.Courage"}}
                         </h2>
                     </div>
     
                     <div class="volonte">
                         <h2>
-                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus" data-label='{{localize "AWAKEN.VERTUS.Volonte"}}' data-vertus="volonte" />
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="rollVertus draggable" data-macroType="vertus" data-macroAttr="volonte" data-label='{{localize "AWAKEN.VERTUS.Volonte"}}' data-vertus="volonte" />
                             {{localize "AWAKEN.VERTUS.Volonte"}}
                         </h2>
     
-                        <input type="number" class="vertusValue" data-type="volonte" name="data.vertus.volonte.value" min="{{systemData.vertus.volonte.min}}" max="{{systemData.vertus.volonte.max}}" value="{{systemData.vertus.volonte.value}}">
+                        <input type="number" class="vertusValue draggable" data-type="volonte" name="data.vertus.volonte.value" min="{{systemData.vertus.volonte.min}}" max="{{systemData.vertus.volonte.max}}" value="{{systemData.vertus.volonte.value}}">
     
                         {{#each data.data.vertus.volonte.depense as | key volonte|}}
                             {{#if key.show}}
@@ -174,7 +174,7 @@
                                 <div class="base">
                                     <h2>{{keyComp.label}}</h2>
 
-                                    <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{keyComp.label}}" data-attribut="{{key.value}}" data-competence="{{keyComp.value}}" data-malus="{{key.malus}}"/>
+                                    <img src="systems/awaken/assets/icons/D6Black.svg" class="roll draggable" data-macroType="competence" data-macroAttr="{{attributs}}" data-macroComp="{{competences}}" data-label="{{keyComp.label}}" data-attribut="{{key.value}}" data-competence="{{keyComp.value}}" data-malus="{{key.malus}}"/>
                                     <input type="number" name="data.attributs.{{attributs}}.competences.{{competences}}.value" value="{{keyComp.value}}" min="{{keyComp.min}}" max="{{keyComp.max}}" />
                                 </div>
                                 <div class="experience">
@@ -193,7 +193,7 @@
 
                                     <span>{{keySpe.name}}</span>
 
-                                    <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{keyComp.label}} ({{keySpe.name}})" data-attribut="{{key.value}}" data-competence="{{keyComp.value}}" data-bonus="1" data-malus="{{key.malus}}"/>
+                                    <img src="systems/awaken/assets/icons/D6Black.svg" class="roll draggable" data-macroType="specialisation" data-macroAttr="{{attributs}}" data-macroComp="{{competences}}" data-macroItem="{{keySpe._id}}" data-label="{{keyComp.label}} ({{keySpe.name}})" data-attribut="{{key.value}}" data-competence="{{keyComp.value}}" data-bonus="1" data-malus="{{key.malus}}"/>
                                 </div>
                                 {{/each}}
                                 <div class="create">
@@ -217,7 +217,7 @@
                     <div class="base">
                         <h2 class="{{prodiges}}">
                             {{key.label}}
-                            <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{key.label}}" data-attribut="{{key.value}}" data-difficulte="true" />
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="roll draggable" data-macroType="famille" data-macroAttr="{{prodiges}}" data-label="{{key.label}}" data-attribut="{{key.value}}" data-difficulte="true" />
                         </h2>
                         <input type="number" name="data.prodiges.{{prodiges}}.value" value="{{key.value}}" min="{{key.min}}" />
         
@@ -238,7 +238,7 @@
                                 <span class="label">{{localize "AWAKEN.PRODIGES.Rang"}}</span>
                                 <span class="score">{{keyProdige.data.rang}}</span>
                             </label>
-                            <img src="systems/awaken/assets/icons/D6Black.svg" class="roll" data-label="{{key.label}} / {{keyProdige.name}}" data-attribut="{{key.value}}" data-type="{{keyProdige.data.labelType}}" data-activation="{{keyProdige.data.activation}}" data-duree="{{keyProdige.data.duree}}" data-description="{{{keyProdige.data.description}}}" data-prodige="true" />
+                            <img src="systems/awaken/assets/icons/D6Black.svg" class="roll draggable" data-macroType="prodige" data-macroAttr="{{prodiges}}" data-macroItem="{{keyProdige._id}}" data-label="{{key.label}} / {{keyProdige.name}}" data-attribut="{{key.value}}" data-type="{{keyProdige.data.labelType}}" data-activation="{{keyProdige.data.activation}}" data-duree="{{keyProdige.data.duree}}" data-description="{{{keyProdige.data.description}}}" data-prodige="true" />
                             <div class="gestionButton">
                                 <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                                 <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -252,6 +252,8 @@
                                 <span class="label">{{localize "AWAKEN.PRODIGES.Activation"}} : </span>
                                 <span class="data">{{keyProdige.data.activation}}</span>
                             </label>
+                        </div>
+                        <div class="line options hide">
                             <label class="duree">
                                 <span class="label">{{localize "AWAKEN.PRODIGES.Duree"}} : </span>
                                 <span class="data">{{keyProdige.data.duree}}</span>

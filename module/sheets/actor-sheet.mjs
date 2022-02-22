@@ -10,7 +10,8 @@ export class AwakenActorSheet extends ActorSheet {
       template: "systems/awaken/templates/actor-sheet.html",
       width: 900,
       height: 600,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
+      dragDrop: [{dragSelector: ".draggable", dropSelector: null}],
     });
   }
 
@@ -39,8 +40,6 @@ export class AwakenActorSheet extends ActorSheet {
 
     this._setCorruption(context);
     this._setVitalite(context);
-
-    console.log(context);
     
     return context;
   }
@@ -809,6 +808,32 @@ export class AwakenActorSheet extends ActorSheet {
     html.find('.roll').click(this._onRoll.bind(this));
     html.find('.rollCombat').click(this._onRollCombat.bind(this));
     html.find('.rollVertus').click(this._onRollVertus.bind(this));
+  }
+
+  _onDragStart(event) {
+    const li = event.currentTarget;
+    const hasRoll = $(li).hasClass("roll");
+    const hasRollVertus = $(li).hasClass("rollVertus");
+
+    if ( event.target.classList.contains("content-link") ) return;
+
+    // Create drag data
+    const dragData = {
+      actorId: this.actor.id,
+      sceneId: this.actor.isToken ? canvas.scene?.id : null,
+      tokenId: this.actor.isToken ? this.actor.token.id : null,
+      label:$(li).data("label")
+    };
+
+    if(hasRoll || hasRollVertus) {
+      dragData.type = $(li).data("macrotype");
+      dragData.attr = $(li).data("macroattr");
+      dragData.comp = $(li).data("macrocomp") || "";
+      dragData.itemId = $(li).data("macroitem") || 0;
+    }
+    
+    // Set data transfer
+    event.dataTransfer.setData("text/plain", JSON.stringify(dragData));
   }
 
   /* -------------------------------------------- */

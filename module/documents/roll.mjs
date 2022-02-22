@@ -69,9 +69,12 @@ export class RollAwaken extends Roll {
             this.terms.forEach((dices) => {
                 let list = [];
     
-                for(let i = 0;i < dices.results.length;i++) { 
-                    list.push(dices.results[i].result); 
+                if(dices?.results) {
+                    for(let i = 0;i < dices.results.length;i++) { 
+                        list.push(dices.results[i].result); 
+                    }
                 }
+                
     
                 if(list.filter(x => x==1).length >= 1) {
                     this.awaken.hasFail = true;

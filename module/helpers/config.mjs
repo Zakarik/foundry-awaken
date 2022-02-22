@@ -45,6 +45,12 @@ export const AWAKEN = {};
    "mortels":"AWAKEN.EQUIPEMENT.ARMEMENT.TYPEDGTS.Mortels"
  };
 
+ AWAKEN.vertus = {
+   "chance":"AWAKEN.VERTUS.Chance",
+   "courage":"AWAKEN.VERTUS.Courage",
+   "volonte":"AWAKEN.VERTUS.Volonte"
+ };
+
  AWAKEN.roll = {
     "succes":"AWAKEN.ROLL.Succes",
     "success":"AWAKEN.ROLL.Success",
