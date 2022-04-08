@@ -1342,7 +1342,7 @@ export class AwakenActorSheet extends ActorSheet {
         }
 
         if(wear) {
-          const dgts = i.data.degats;
+          const dgts = +i.data.degats;
           const name = i.name;
           const type = i.data.labelType;
           const typeDegats = i.data.labelTypeDegats;
@@ -1469,6 +1469,7 @@ export class AwakenActorSheet extends ActorSheet {
       typeDegats:detailArme.typeDegats,
       description:detailArme.description,
     };
+
     const bonus = {
       data:{
         combat:{
