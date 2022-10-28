@@ -26,9 +26,9 @@ export class AwakenActor extends Actor {
   }
 
   prepareDerivedData() {
-    const actorData = this.data;
-    const context = actorData.data;   
-    
+    const actorData = this;
+    const context = actorData.system;
+
     const physique = +context.attributs.physique.value;
     const agilite = +context.attributs.physique.competences.agilite.value;
     const melee = +context.attributs.physique.competences.melee.value;

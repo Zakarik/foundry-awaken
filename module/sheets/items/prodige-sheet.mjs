@@ -20,8 +20,8 @@ export class AwakenProdigeSheet extends ItemSheet {
   getData() {
     const context = super.getData();
 
-    context.data.data.labelType = game.i18n.localize(CONFIG.AWAKEN.prodiges[context.data.data.type]);
-    context.systemData = context.data.data;
+    context.data.system.labelType = game.i18n.localize(CONFIG.AWAKEN.prodiges[context.data.system.type]);
+    context.systemData = context.data.system;
 
     console.log(context);
 

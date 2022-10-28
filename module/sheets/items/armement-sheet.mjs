@@ -20,9 +20,9 @@ export class AwakenArmementSheet extends ItemSheet {
   getData() {
     const context = super.getData();
 
-    context.data.data.labelType = game.i18n.localize(CONFIG.AWAKEN.armement[context.data.data.type]);
-    context.data.data.labelTypeDegats = game.i18n.localize(CONFIG.AWAKEN.armement[context.data.data.typeDegats]);
-    context.systemData = context.data.data;
+    context.data.system.labelType = game.i18n.localize(CONFIG.AWAKEN.armement[context.data.system.type]);
+    context.data.system.labelTypeDegats = game.i18n.localize(CONFIG.AWAKEN.armement[context.data.system.typeDegats]);
+    context.systemData = context.data.system;
 
     return context;
   }

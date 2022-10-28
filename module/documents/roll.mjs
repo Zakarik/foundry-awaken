@@ -27,7 +27,7 @@ export class RollAwaken extends Roll {
             combatTypeDegats:"",
             combatDgts:"",
             combatDescription:"",
-        }        
+        }
     }
 
     async render(chatOptions = {}) {
@@ -64,18 +64,18 @@ export class RollAwaken extends Roll {
         if(this._total >= 5) {
             this.awaken.hasCritique = true;
         }
-        
+
         if(this._total === 0) {
             this.terms.forEach((dices) => {
                 let list = [];
-    
+
                 if(dices?.results) {
-                    for(let i = 0;i < dices.results.length;i++) { 
-                        list.push(dices.results[i].result); 
+                    for(let i = 0;i < dices.results.length;i++) {
+                        list.push(dices.results[i].result);
                     }
                 }
-                
-    
+
+
                 if(list.filter(x => x==1).length >= 1) {
                     this.awaken.hasFail = true;
                 }
@@ -108,9 +108,9 @@ export class RollAwaken extends Roll {
     async toMessage(messageData = {}, { rollMode = null, create = true } = {}) {
         // Perform the roll, if it has not yet been rolled
         if (!this._evaluated) {
-            await this.evaluate();
+            await this.evaluate({async:true});
         }
-        
+
         // RollMode
         const rMode = rollMode || messageData.rollMode || game.settings.get("core", "rollMode");
         if (rMode) {
@@ -131,7 +131,7 @@ export class RollAwaken extends Roll {
         // Either create the message or just return the chat data
         const message = await ChatMessage.create(msg, {
             rollMode: rMode
-        }); 
+        });
 
         return create ? message : message.data;
     }

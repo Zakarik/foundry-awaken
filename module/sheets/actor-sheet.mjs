@@ -21,7 +21,7 @@ export class AwakenActorSheet extends ActorSheet {
   getData() {
     const context = super.getData();
 
-    for (let [key, attr] of Object.entries(context.data.data.attributs)){
+    for (let [key, attr] of Object.entries(context.data.system.attributs)){
       attr.label = game.i18n.localize(CONFIG.AWAKEN.attributs[key]);
 
       for (let [keyComp, comp] of Object.entries(attr.competences)){
@@ -29,18 +29,18 @@ export class AwakenActorSheet extends ActorSheet {
       }
     }
 
-    for (let [key, attr] of Object.entries(context.data.data.prodiges)){
+    for (let [key, attr] of Object.entries(context.data.system.prodiges)){
       attr.label = game.i18n.localize(CONFIG.AWAKEN.prodiges[key]);
     }
 
     this._prepareCharacterItems(context);
     this._prepareCharacterReserves(context);
 
-    context.systemData = context.data.data;
+    context.systemData = context.data.system;
 
     this._setCorruption(context);
     this._setVitalite(context);
-    
+
     return context;
   }
 
@@ -92,7 +92,7 @@ export class AwakenActorSheet extends ActorSheet {
         switch(number) {
           case 1:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -110,7 +110,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 2:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -129,7 +129,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 3:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -149,7 +149,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 4:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -170,7 +170,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 5:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -196,7 +196,7 @@ export class AwakenActorSheet extends ActorSheet {
         switch(number) {
           case 1:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -210,7 +210,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 2:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -225,7 +225,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 3:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -241,7 +241,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 4:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -258,7 +258,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           case 5:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -292,7 +292,7 @@ export class AwakenActorSheet extends ActorSheet {
         switch(number) {
           case 1:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -311,10 +311,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 2:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -332,10 +332,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 3:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -352,10 +352,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 4:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -371,10 +371,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 5:
             data = {
-              data:{
+              system:{
                 attributs:{
                   [attribut]:{
                     competences:{
@@ -396,7 +396,7 @@ export class AwakenActorSheet extends ActorSheet {
         switch(number) {
           case 1:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -411,10 +411,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 2:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -428,10 +428,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 3:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -444,10 +444,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 4:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                       experience:{
@@ -459,10 +459,10 @@ export class AwakenActorSheet extends ActorSheet {
               }
             }
             break;
-  
+
           case 5:
             data = {
-              data:{
+              system:{
                 prodiges:{
                   [prodige]:{
                     experience:{
@@ -474,81 +474,81 @@ export class AwakenActorSheet extends ActorSheet {
             }
             break;
         }
-      }    
+      }
 
       this.actor.update(data);
     });
 
     html.find('input.physique').change(ev => {
-      const vitalite = +this.getData().data.data.vitalite.value;
+      const vitalite = +this.getData().data.system.vitalite.value;
       const endurance = +$(ev.currentTarget).val()+3;
 
       if(endurance < vitalite) {
         let adjust = endurance;
 
         const update = {
-          data:{
+          system:{
             vitalite: {
               value: adjust,
               subValue: 2
             }
           }
         };
-        
+
         this.actor.update(update);
       }
     });
 
     html.find('button.endurance').click(ev => {
-      const score = +this.getData().data.data.corruption.value;
+      const score = +this.getData().data.system.corruption.value;
       let nScore = +$(ev.currentTarget).data("number");
 
       if(score === nScore) { nScore = 0; }
-    
+
       const update = {
-        data:{
+        system:{
           corruption:{
             value:nScore
           }
         }
       };
-      
+
       this.actor.update(update);
     });
 
     html.find('div.endurance div.line button').click(ev => {
-      const valueEndurance = this.getData().data.data.endurance.value;
+      const valueEndurance = this.getData().data.system.endurance.value;
 
       let num = +$(ev.currentTarget).data("num");
       let sub = +$(ev.currentTarget).data("sub");
 
       if (num === valueEndurance) { sub = 2; }
-    
+
       const update = {
-        data:{
+        system:{
           vitalite:{
             value: num,
             subValue: sub
           }
         }
       };
-      
+
       this.actor.update(update);
     });
 
     html.find('div.endurance div.lastLine button').click(ev => {
       let num = +$(ev.currentTarget).data("num");
       let sub = 0;
-    
+
       const update = {
-        data:{
+        system:{
           vitalite:{
             value: num,
             subValue: sub
           }
         }
       };
-      
+
       this.actor.update(update);
     });
 
@@ -586,7 +586,7 @@ export class AwakenActorSheet extends ActorSheet {
       }
 
       const update = {
-        data:{
+        system:{
           vertus:{
             [type]:{
               depense:{
@@ -617,7 +617,7 @@ export class AwakenActorSheet extends ActorSheet {
 
       if(number === 0) { number = 1; }
 
-      const value = this.getData().data.data.vertus[type].depense["b"+number].used;
+      const value = this.getData().data.system.vertus[type].depense["b"+number].used;
 
       let b1 = false;
       let b2 = false;
@@ -635,25 +635,25 @@ export class AwakenActorSheet extends ActorSheet {
             b4 = true;
             b5 = true;
             break;
-  
+
           case 2:
             b2 = true;
             b3 = true;
             b4 = true;
             b5 = true;
             break;
-  
+
           case 3:
             b3 = true;
             b4 = true;
             b5 = true;
             break;
-  
+
           case 4:
             b4 = true;
             b5 = true;
             break;
-  
+
           case 5:
             b5 = true;
             break;
@@ -661,7 +661,7 @@ export class AwakenActorSheet extends ActorSheet {
       }
 
       const update = {
-        data:{
+        system:{
           vertus:{
             [type]:{
               depense:{
@@ -697,12 +697,12 @@ export class AwakenActorSheet extends ActorSheet {
     html.find('img.wear').click(ev => {
       const header = $(ev.currentTarget).parents(".rItems");
       const item = this.actor.items.get(header.data("item-id"));
-      const type = item.data.type;
-      const wpnType = item.data.data.type;
+      const type = item.type;
+      const wpnType = item.system.type;
       const wpnListStats = this._getWpnStats();
 
       const update = {
-        data: {
+        system: {
             wear:true
         }
       };
@@ -714,7 +714,7 @@ export class AwakenActorSheet extends ActorSheet {
 
           item.update(update);
         } else if(wpnType === "distance" && wpnListStats.distance === 0 && wpnListStats.contact === 0) {
-  
+
           item.update(update);
         }
       }
@@ -725,7 +725,7 @@ export class AwakenActorSheet extends ActorSheet {
       const item = this.actor.items.get(header.data("item-id"));
 
       const update = {
-          data: {
+        system: {
               wear:false
           }
       };
@@ -735,16 +735,16 @@ export class AwakenActorSheet extends ActorSheet {
 
     html.find('input.reserveAttaque').change(ev => {
       const value = +$(ev.currentTarget).val();
-      const rTotal = +this.getData().data.data.reserves.total;
-      const rDefense = +this.getData().data.data.reserves.defense.value;
-      const rDefenseMin = +this.getData().data.data.reserves.defense.min;
+      const rTotal = +this.getData().data.system.reserves.total;
+      const rDefense = +this.getData().data.system.reserves.defense.value;
+      const rDefenseMin = +this.getData().data.system.reserves.defense.min;
 
       const total = value+rDefense;
 
       if(total > rTotal) {
         if(rDefense != rDefenseMin) {
           let update = {
-            data:{
+            system:{
               reserves:{
                 defense:{
                   value:rDefense-1
@@ -762,16 +762,16 @@ export class AwakenActorSheet extends ActorSheet {
 
     html.find('input.reserveDefense').change(ev => {
       const value = +$(ev.currentTarget).val();
-      const rTotal = +this.getData().data.data.reserves.total;
-      const rAttaque = +this.getData().data.data.reserves.attaque.value;
-      const rAttaqueMin = +this.getData().data.data.reserves.attaque.min;
+      const rTotal = +this.getData().data.system.reserves.total;
+      const rAttaque = +this.getData().data.system.reserves.attaque.value;
+      const rAttaqueMin = +this.getData().data.system.reserves.attaque.min;
 
       const total = value+rAttaque;
 
       if(total > rTotal) {
         if(rAttaque != rAttaqueMin) {
           let update = {
-            data:{
+            system:{
               reserves:{
                 attaque:{
                   value:rAttaque-1
@@ -831,7 +831,7 @@ export class AwakenActorSheet extends ActorSheet {
       dragData.comp = $(li).data("macrocomp") || "";
       dragData.itemId = $(li).data("macroitem") || 0;
     }
-    
+
     // Set data transfer
     event.dataTransfer.setData("text/plain", JSON.stringify(dragData));
   }
@@ -850,7 +850,7 @@ export class AwakenActorSheet extends ActorSheet {
     const itemData = {
       name: name,
       type: type,
-      data: data
+      system: data
     };
 
     switch(type) {
@@ -880,8 +880,8 @@ export class AwakenActorSheet extends ActorSheet {
     }
 
     // Remove the type from the dataset since it's in the itemData.type prop.
-    delete itemData.data["type"];
-  
+    delete itemData.system["type"];
+
     // Finally, create the item!
     return await Item.create(itemData, {parent: this.actor});
   }
@@ -889,7 +889,7 @@ export class AwakenActorSheet extends ActorSheet {
   _setCorruption(context) {
     context.systemData.corruption.check = {};
 
-    switch(context.data.data.corruption.value) {
+    switch(context.data.system.corruption.value) {
       case 1:
         context.systemData.corruption.check.c1 = true;
         break;
@@ -1088,7 +1088,7 @@ export class AwakenActorSheet extends ActorSheet {
         case 5:
         case 4:
             dataVitalite.liste.normal["v"+i].active = true;
-            
+
             if (dataVitalite.value < i) {
               dataVitalite.liste.normal["v"+i].s1Checked = true;
               dataVitalite.liste.normal["v"+i].s2Checked = true;
@@ -1099,7 +1099,7 @@ export class AwakenActorSheet extends ActorSheet {
               } else if(dataVitalite.subValue === 1) {
                 dataVitalite.liste.normal["v"+i].s1Checked = true;
               }
-            }          
+            }
           break;
 
         case 3:
@@ -1116,7 +1116,7 @@ export class AwakenActorSheet extends ActorSheet {
             } else if(dataVitalite.subValue === 1) {
               dataVitalite.liste.blesse["v"+i].s1Checked = true;
             }
-          }      
+          }
           break;
 
         case 1:
@@ -1133,20 +1133,20 @@ export class AwakenActorSheet extends ActorSheet {
             } else if(dataVitalite.subValue === 1) {
               dataVitalite.liste.grievementBlesse["v"+i].s1Checked = true;
             }
-          }       
+          }
           break;
 
         case -1:
           if(dataVitalite.value === i) {
             dataVitalite.liste.mourant["v1"] = true;
-          }   
+          }
           break;
 
         case -2:
           if(dataVitalite.value === i) {
             dataVitalite.liste.mourant["v1"] = true;
             dataVitalite.liste.mourant["v2"] = true;
-          }   
+          }
           break;
 
         case -3:
@@ -1154,7 +1154,7 @@ export class AwakenActorSheet extends ActorSheet {
             dataVitalite.liste.mourant["v1"] = true;
             dataVitalite.liste.mourant["v2"] = true;
             dataVitalite.liste.mourant["v3"] = true;
-          }   
+          }
           break;
 
         case -4:
@@ -1163,7 +1163,7 @@ export class AwakenActorSheet extends ActorSheet {
             dataVitalite.liste.mourant["v2"] = true;
             dataVitalite.liste.mourant["v3"] = true;
             dataVitalite.liste.mourant["v4"] = true;
-          }   
+          }
           break;
       }
     }
@@ -1171,8 +1171,8 @@ export class AwakenActorSheet extends ActorSheet {
 
   _prepareCharacterItems(sheetData) {
     const actorData = sheetData.actor;
-    const compData = sheetData.data.data.attributs;
-    const prodigeData = sheetData.data.data.prodiges;
+    const compData = sheetData.data.system.attributs;
+    const prodigeData = sheetData.data.system.prodiges;
 
     const equipement = [];
     const reputation = [];
@@ -1239,7 +1239,7 @@ export class AwakenActorSheet extends ActorSheet {
       }
       // SPECIALISATION.
       else if (i.type === 'specialisation') {
-        const comp = i.data.competence;
+        const comp = i.system.competence;
 
         switch(comp) {
           case "expression":
@@ -1257,7 +1257,7 @@ export class AwakenActorSheet extends ActorSheet {
           case "representation":
               representation.push(i);
             break;
-            
+
           case "negoce":
               negoce.push(i);
             break;
@@ -1277,7 +1277,7 @@ export class AwakenActorSheet extends ActorSheet {
           case "savoir":
               savoir.push(i);
             break;
-            
+
           case "perception":
               perception.push(i);
             break;
@@ -1297,7 +1297,7 @@ export class AwakenActorSheet extends ActorSheet {
           case "armesDistance":
               armesDistance.push(i);
             break;
-            
+
           case "survie":
               survie.push(i);
             break;
@@ -1305,10 +1305,10 @@ export class AwakenActorSheet extends ActorSheet {
       }
       // PRODIGE
       else if (i.type === 'prodige') {
-        const famille = i.data.famille;
+        const famille = i.system.famille;
 
-        if(i.data.labelType === "") {
-          i.data.labelType = game.i18n.localize(CONFIG.AWAKEN.prodiges[i.data.type]);
+        if(i.system.labelType === "") {
+          i.system.labelType = game.i18n.localize(CONFIG.AWAKEN.prodiges[i.system.type]);
         }
 
         switch(famille) {
@@ -1331,24 +1331,24 @@ export class AwakenActorSheet extends ActorSheet {
       }
       // ARMEMENT
       else if (i.type === 'armement') {
-        const wear = i.data.wear;
+        const wear = i.system.wear;
 
-        if(i.data.labelType === "") {
-          i.data.labelType = game.i18n.localize(CONFIG.AWAKEN.armement[i.data.type]);
+        if(i.system.labelType === "") {
+          i.system.labelType = game.i18n.localize(CONFIG.AWAKEN.armement[i.system.type]);
         }
 
-        if(i.data.labelTypeDegats === "") {
-          i.data.labelTypeDegats = game.i18n.localize(CONFIG.AWAKEN.armement[i.data.typeDegats]);
+        if(i.system.labelTypeDegats === "") {
+          i.system.labelTypeDegats = game.i18n.localize(CONFIG.AWAKEN.armement[i.system.typeDegats]);
         }
 
         if(wear) {
-          const dgts = +i.data.degats;
+          const dgts = +i.system.degats;
           const name = i.name;
-          const type = i.data.labelType;
-          const typeDegats = i.data.labelTypeDegats;
-          const description = i.data.description;
+          const type = i.system.labelType;
+          const typeDegats = i.system.labelTypeDegats;
+          const description = i.system.description;
 
-          if(i.data.type === "contact") {
+          if(i.system.type === "contact") {
             contact += 1;
             if(contact === 1) {
               bonusArmeContact += dgts;
@@ -1384,13 +1384,13 @@ export class AwakenActorSheet extends ActorSheet {
       }
       // ARMURE
       else if (i.type === 'armure') {
-        const wear = i.data.wear;
+        const wear = i.system.wear;
 
         if(wear) {
           armure.wear.push(i);
-          bonusArmureContact += i.data.bonusContact;
-          bonusArmureDefense += i.data.bonusDefense;
-          malusArmurePhysique += i.data.malusPhysique;
+          bonusArmureContact += i.system.bonusContact;
+          bonusArmureDefense += i.system.bonusDefense;
+          malusArmurePhysique += i.system.malusPhysique;
         } else {
           armure.unwear.push(i);
         }
@@ -1425,7 +1425,7 @@ export class AwakenActorSheet extends ActorSheet {
     corps.sort(SortArray);
     illusion.sort(SortArray);
     realite.sort(SortArray);
-    
+
     armement.equipped.contact = contact;
     armement.equipped.distance = distance;
     armement.wear.sort(SortArray);
@@ -1444,13 +1444,13 @@ export class AwakenActorSheet extends ActorSheet {
     compData.social.competences.rhetorique.specialisation = rhetorique;
     compData.social.competences.representation.specialisation = representation;
     compData.social.competences.negoce.specialisation = negoce;
-    
+
     compData.mental.competences.erudition.specialisation = erudition;
     compData.mental.competences.artisanat.specialisation = artisanat;
     compData.mental.competences.medecine.specialisation = medecine;
     compData.mental.competences.savoir.specialisation = savoir;
     compData.mental.competences.perception.specialisation = perception;
-    
+
     compData.physique.competences.agilite.specialisation = agilite;
     compData.physique.competences.melee.specialisation = melee;
     compData.physique.competences.discretion.specialisation = discretion;
@@ -1462,7 +1462,7 @@ export class AwakenActorSheet extends ActorSheet {
     prodigeData.illusion.liste = illusion;
     prodigeData.realite.liste = realite;
 
-    sheetData.data.data.armement = {
+    sheetData.data.system.armement = {
       nom:detailArme.nom,
       dgts:detailArme.degats,
       type:detailArme.type,
@@ -1471,7 +1471,7 @@ export class AwakenActorSheet extends ActorSheet {
     };
 
     const bonus = {
-      data:{
+      system:{
         combat:{
           bonus:{
             mainsNues:bonusArmeContact+bonusArmureDefense+bonusArmureContact,
@@ -1497,7 +1497,7 @@ export class AwakenActorSheet extends ActorSheet {
 
   _prepareCharacterReserves(sheetData) {
     const wpnWear = sheetData.actor.armement.equipped;
-    const actorData = sheetData.data.data;
+    const actorData = sheetData.data.system;
     const reservesData = actorData.reserves;
     const combatData = actorData.combat;
     const bonusArmure = reservesData?.bonus?.armure || 0;
@@ -1519,7 +1519,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 5;
         } else if(subVitalite === 1) {
           result = 8;
-        }        
+        }
         break;
 
       case 1:
@@ -1527,7 +1527,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 8;
         } else if(subVitalite === 1) {
           result = 9;
-        }  
+        }
         break;
 
       case 2:
@@ -1535,7 +1535,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 9;
         } else if(subVitalite === 1) {
           result = 10;
-        }  
+        }
         break;
 
       case 3:
@@ -1543,7 +1543,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 10;
         } else if(subVitalite === 1) {
           result = 11;
-        }  
+        }
         break;
 
       case 4:
@@ -1551,13 +1551,13 @@ export class AwakenActorSheet extends ActorSheet {
           result = 11;
         } else if(subVitalite === 1) {
           result = 12;
-        }  
+        }
         break;
 
       case 5:
         result = 12;
         break;
-        
+
       case 6:
         if(subVitalite === 2) {
           result = 12;
@@ -1588,8 +1588,8 @@ export class AwakenActorSheet extends ActorSheet {
 
     if(reservesData.defense.value < bonusArmure) { reservesData.defense.value = bonusArmure; }
 
-    const attaque = sheetData.data.data.reserves.attaque.value;
-    const defense = sheetData.data.data.reserves.defense.value;
+    const attaque = sheetData.data.system.reserves.attaque.value;
+    const defense = sheetData.data.system.reserves.defense.value;
     const total = attaque+defense;
 
     if(total > rTotal) {
@@ -1623,14 +1623,14 @@ export class AwakenActorSheet extends ActorSheet {
             const hasMalus = $(event.currentTarget).data("malus") || false;
             const hasDifficulte = $(event.currentTarget).data("difficulte") || false;
             const isProdige = $(event.currentTarget).data("prodige") || false;
-            const malus = +this.getData().data.data.corruption.malus || 0;
-            const malusPhysique = +this.getData().data.data?.armures?.malus?.physique || 0;
+            const malus = +this.getData().data.system.corruption.malus || 0;
+            const malusPhysique = +this.getData().data.system?.armures?.malus?.physique || 0;
             const max = this._getMaxDices() || -1;
 
-            let dices = attribut+competence+bonus+mod;    
+            let dices = attribut+competence+bonus+mod;
             let notRoll = false;
 
-            if(hasMalus === true) { 
+            if(hasMalus === true) {
               dices += malus;
               dices -= malusPhysique;
             }
@@ -1642,8 +1642,8 @@ export class AwakenActorSheet extends ActorSheet {
             } else if(max < dices) {
               dices = max;
             }
-             
-            const roll = await new game.awaken.RollAwaken(`${dices}D6cs>=5`, this.actor.data.data);
+
+            const roll = await new game.awaken.RollAwaken(`${dices}D6cs>=5`, this.actor.system);
 
             roll.awaken.label = label;
             roll.awaken.hasDifficulte = hasDifficulte;
@@ -1695,8 +1695,8 @@ export class AwakenActorSheet extends ActorSheet {
           callback: async (html) => {
             const mod = +html.find("input#mod").val();
             const vertu = $(event.currentTarget).data("vertus");
-            const depense = this.getData().data.data.vertus[vertu].depense;
-            const value = +this.getData().data.data.vertus[vertu].value;
+            const depense = this.getData().data.system.vertus[vertu].depense;
+            const value = +this.getData().data.system.vertus[vertu].value;
 
             let dice = 0;
 
@@ -1709,25 +1709,25 @@ export class AwakenActorSheet extends ActorSheet {
                   else if(depense.b2.used === false) { dice = 2; }
                   else if(depense.b1.used === false) { dice = 1; }
                   break;
-  
+
                 case 4:
                   if(depense.b4.used === false) { dice = 4; }
                   else if(depense.b3.used === false) { dice = 3; }
                   else if(depense.b2.used === false) { dice = 2; }
                   else if(depense.b1.used === false) { dice = 1; }
                   break;
-  
+
                 case 3:
                   if(depense.b3.used === false) { dice = 3; }
                   else if(depense.b2.used === false) { dice = 2; }
                   else if(depense.b1.used === false) { dice = 1; }
                   break;
-  
+
                 case 2:
                   if(depense.b2.used === false) { dice = 2; }
                   else if(depense.b1.used === false) { dice = 1; }
                   break;
-  
+
                 case 1:
                   if(depense.b1.used === false) { dice = 1; }
                   break;
@@ -1738,9 +1738,9 @@ export class AwakenActorSheet extends ActorSheet {
 
             dice += mod;
 
-            const roll = await new game.awaken.RollAwaken(`${dice}D6cs>=5`, this.actor.data.data);
+            const roll = await new game.awaken.RollAwaken(`${dice}D6cs>=5`, this.actor.system);
             roll.awaken.label = label;
-                        
+
             await roll.toMessage({
               speaker: {
               actor: this.actor?.id || null,
@@ -1762,7 +1762,7 @@ export class AwakenActorSheet extends ActorSheet {
   async _onRollCombat(event) {
     const label = $(event.currentTarget).data("label");
     const hasMalus = $(event.currentTarget).data("malus") || false;
-    const malus = +this.getData().data.data.corruption.malus || 0;
+    const malus = +this.getData().data.system.corruption.malus || 0;
     const max = this._getMaxDices() || -1;
 
     let notRoll = false;
@@ -1774,13 +1774,13 @@ export class AwakenActorSheet extends ActorSheet {
     let attaque = $(event.currentTarget).data("attaque") || false;
     let defense = $(event.currentTarget).data("defense") || false;
 
-    if(hasMalus === true) { 
-      attaque += malus 
+    if(hasMalus === true) {
+      attaque += malus
       defense += malus
     }
 
-    const rollAttaque = await new game.awaken.RollAwaken(`${attaque}D6cs>=5`, this.actor.data.data);
-    const rollDefense = await new game.awaken.RollAwaken(`${defense}D6cs>=5`, this.actor.data.data);
+    const rollAttaque = await new game.awaken.RollAwaken(`${attaque}D6cs>=5`, this.actor.system);
+    const rollDefense = await new game.awaken.RollAwaken(`${defense}D6cs>=5`, this.actor.system);
 
     rollAttaque.awaken.label = label+" / "+game.i18n.localize("AWAKEN.COMBAT.RESERVES.Attaque");
     rollAttaque.awaken.notRoll = notRoll;
@@ -1828,8 +1828,8 @@ export class AwakenActorSheet extends ActorSheet {
   }
 
   _getMaxDices() {
-    const vitalite = this.getData().data.data.vitalite.value;
-    const subVitalite = this.getData().data.data.vitalite.subValue;
+    const vitalite = this.getData().data.system.vitalite.value;
+    const subVitalite = this.getData().data.system.vitalite.subValue;
     let result = false;
 
     switch(vitalite) {
@@ -1845,7 +1845,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 5;
         } else if(subVitalite === 1) {
           result = 8;
-        }        
+        }
         break;
 
       case 1:
@@ -1853,7 +1853,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 8;
         } else if(subVitalite === 1) {
           result = 9;
-        }  
+        }
         break;
 
       case 2:
@@ -1861,7 +1861,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 9;
         } else if(subVitalite === 1) {
           result = 10;
-        }  
+        }
         break;
 
       case 3:
@@ -1869,7 +1869,7 @@ export class AwakenActorSheet extends ActorSheet {
           result = 10;
         } else if(subVitalite === 1) {
           result = 11;
-        }  
+        }
         break;
 
       case 4:
@@ -1877,13 +1877,13 @@ export class AwakenActorSheet extends ActorSheet {
           result = 11;
         } else if(subVitalite === 1) {
           result = 12;
-        }  
+        }
         break;
 
       case 5:
         result = 12;
         break;
-        
+
       case 6:
         if(subVitalite === 2) {
           result = 12;

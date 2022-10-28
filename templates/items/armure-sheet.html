@@ -5,20 +5,20 @@
             <h1 class="armorname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="{{localize "AWAKEN.Nom"}}" />
             </h1>
-            <div class="main">                
+            <div class="main">
                 <label class="malusPhysique">
                     <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.MalusPhysique"}} : </span>
-                    <input class="score" type="number" name="data.malusPhysique" value="{{systemData.malusPhysique}}" min="0" />
+                    <input class="score" type="number" name="system.malusPhysique" value="{{systemData.malusPhysique}}" min="0" />
                 </label>
 
                 <label class="bonusDefense">
                     <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.BonusDefense"}} : </span>
-                    <input class="score" type="number" name="data.bonusDefense" value="{{systemData.bonusDefense}}" min="0" />
+                    <input class="score" type="number" name="system.bonusDefense" value="{{systemData.bonusDefense}}" min="0" />
                 </label>
 
                 <label class="bonusContact">
                     <span class="label">{{localize "AWAKEN.EQUIPEMENT.ARMURE.BonusContact"}} : </span>
-                    <input class="score" type="number" name="data.bonusContact" value="{{systemData.bonusContact}}" min="0" />
+                    <input class="score" type="number" name="system.bonusContact" value="{{systemData.bonusContact}}" min="0" />
                 </label>
             </div>
         </div>
@@ -26,6 +26,6 @@
     <div class="description">
         <h2 class="header-mTitle">{{localize "AWAKEN.Description"}}</h2>
 
-        {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+        {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
     </div>
 </form>
