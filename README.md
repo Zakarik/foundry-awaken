@@ -1,5 +1,5 @@
 # Foundry system for Awaken
-Knight  is a french RPG
+Awaken is a french RPG
 
 If you want to help, contact me on Discord Foundry  Zakarik
 
