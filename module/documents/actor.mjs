@@ -33,7 +33,6 @@ export class AwakenActor extends Actor {
     const agilite = +context.attributs.physique.competences.agilite.value;
     const melee = +context.attributs.physique.competences.melee.value;
     const armeDistance = +context.attributs.physique.competences.armesDistance.value;
-    const wpnMainsNues = +context?.combat?.bonus?.mainsNues || 0;
     const wpnContact = +context?.combat?.bonus?.contact || 0;
     const wpnDistance = +context?.combat?.bonus?.distance || 0;
     const armorBonus = +context?.reserves?.bonus?.armure || 0;
@@ -96,7 +95,7 @@ export class AwakenActor extends Actor {
     }
 
     context.combat = {};
-    context.combat.mainsNues = physique+agilite+melee+armorBonus+wpnMainsNues;
+    context.combat.mainsNues = physique+agilite+melee+armorBonus;
     context.combat.auContact = physique+agilite+melee+wpnContact;
     context.combat.aDistance = physique+armeDistance+wpnDistance;
     context.endurance.value = totalEnd;

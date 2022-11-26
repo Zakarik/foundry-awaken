@@ -2,7 +2,7 @@
   "name": "awaken",
   "title": "Awaken",
   "description": "Une implémentation officielle, supportée par l'éditeur, pour le jeu Awaken.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "esmodules": ["module/awaken.mjs"],
   "styles": ["styles/awaken.css"],
   "packs": [
@@ -10,36 +10,43 @@
         "name": "armes-a-distance",
         "label": "Armes à Distance",
         "path": "packs/armes-a-distance.db",
-        "entity": "Item",
+        "type": "Item",
         "system": "awaken"
     },
     {
         "name": "armes-de-melee",
         "label": "Armes de mêlée",
         "path": "packs/armes-de-melee.db",
-        "entity": "Item",
+        "type": "Item",
         "system": "awaken"
     },
     {
         "name": "prodiges",
         "label": "Prodiges",
         "path": "packs/prodiges.db",
-        "entity": "Item",
+        "type": "Item",
         "system": "awaken"
     },
     {
         "name": "armures",
         "label": "Armures",
         "path": "packs/armures.db",
-        "entity": "Item",
+        "type": "Item",
         "system": "awaken"
     }
   ],
   "languages": [
     {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
       "lang": "fr",
       "name": "French",
-      "path": "lang/fr.json"
+      "path": "lang/fr.json",
+      "flags": {}
     }
   ],
   "gridDistance": 5,
@@ -47,7 +54,7 @@
   "primaryTokenAttribute": "",
   "url": "https://github.com/Zakarik/foundry-awaken",
   "manifest": "https://raw.githubusercontent.com/Zakarik/foundry-awaken/main/system.json",
-  "download": "https://github.com/Zakarik/foundry-awaken/releases/download/v1.0.0/awaken.zip",
+  "download": "https://github.com/Zakarik/foundry-awaken/releases/download/v1.0.1/awaken.zip",
   "authors": [
     {
       "name": "Zakarik",

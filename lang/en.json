@@ -1,0 +1,146 @@
+{
+  "ACTOR":{
+    "TypePj":"PJ"
+  },
+  "ITEM":{
+    "TypeReputation":"Réputation",
+    "TypeEquipement": "Équipement",
+    "TypeSpecialisation": "Spécialisation",
+    "TypeProdige": "Prodige",
+    "TypeArmement": "Armement",
+    "TypeArmure": "Armure"
+  },
+
+  "AWAKEN": {
+    "Nom":"Nom",
+    "Personnalite":"Personnalité",
+    "Origine":"Origine",
+    "Ordre":"Ordre",
+    "Description":"Description",
+    "Personnage":"Personnage",
+    "Reputation":"Réputation",
+    "VERTUS":{
+      "Label":"Vertus",
+      "Chance":"Chance",
+      "Courage":"Courage",
+      "Volonte":"Volonte"
+    },
+    "ATTRIBUTSCOMPETENCES": {
+      "Label": "Attributs et Compétences",
+      "Attributs": "Attributs",
+      "Competence": "Compétence",
+      "Competences": "Compétences",
+      "SOCIAL":{
+        "Label": "Social",
+        "Expression": "Expression",
+        "Empathie": "Empathie",
+        "Rhetorique": "Rhétorique",
+        "Representation": "Représentation",
+        "Negoce": "Négoce"
+      },
+      "MENTAL":{
+        "Label": "Mental",
+        "Erudition": "Érudition",
+        "Artisanat": "Artisanat",
+        "Medecine": "Médecine",
+        "Savoir": "Savoir",
+        "Perception": "Perception"
+      },
+      "PHYSIQUE":{
+        "Label": "Physique",
+        "Agilite": "Agilité",
+        "Melee": "Mêlée",
+        "Discretion": "Discrétion",
+        "ArmesDistance": "Armes à distance",
+        "Survie": "Survie"
+      }
+    },
+    "PRODIGES": {
+      "Label":"Prodiges",
+      "Esprit":"Esprit",
+      "Illusion":"Illusion",
+      "Corps":"Corps",
+      "Realite":"Réalité",
+      "Famille":"Famille",
+      "Rang":"Rang",
+      "Activation":"Activation",
+      "Duree":"Durée",
+      "TYPES":{
+        "Instinctif":"Prodige instinctif",
+        "Affectif":"Prodige affectif",
+        "InstinctifAffectif":"Prodige instinctif / affectif"
+      }
+    },
+    "CORRUPTION": {
+      "Label": "Corruption",
+      "Max": "Max Endurance",
+      "Malus": "Malus aux tests"
+    },
+    "COMBAT": {
+      "Label": "Combat",
+      "MainsNues": "Mains nues",
+      "AuContact": "Au contact",
+      "ADistance": "À distance",
+      "PhysiqueShort": "Phy",
+      "Armure": "Armure",
+      "ArmureEquip": "Armures Équipées",
+      "Arme": "Arme",
+      "Armement": "Armement",
+      "ArmementEquip": "Armement Équipé",
+      "ArmeDistanceShort": "Arme à D.",
+      "RESERVES":{
+        "Label": "Réserves",
+        "Modificateur": "Modificateur",
+        "Total": "Total",
+        "Attaque": "Attaque",
+        "Defense": "Défense"
+      }
+    },
+    "VITALITE": {
+      "Label": "Vitalité",
+      "FormeOlympique": "Forme olympique",
+      "Normal": "Normal",
+      "Blesse": "Blessé",
+      "GrievementBlesse": "Grièvement blessé",
+      "MourantMort": "Mourant / Mort",
+      "Endurance": "Endurance",
+      "ModEndurance": "Mod. Endurance",
+      "MaxTest": "Max Test",
+      "PasAction": "Pas de test d'action"
+    },
+    "EQUIPEMENT":{
+      "Label":"Équipement",
+      "Richesse":"Richesse",
+      "Equiper": "Équiper",
+      "Desequiper": "Déséquiper",
+      "ARMEMENT":{
+        "TYPE":{
+          "Contact":"Arme de mêlée",
+          "Distance":"Arme à distance"
+        },
+        "Degats":"Dégâts",
+        "TYPEDGTS":{
+          "Superficiels":"Type de dégâts : Superficiels",
+          "Mortels":"Type de dégâts : Mortels"
+        }
+      },
+      "ARMURE":{
+        "MalusPhysique": "Malus Physique",
+        "BonusDefense": "Bonus en défense",
+        "BonusContact": "Bonus au contact"
+      }
+    },
+    "ROLL": {
+      "Succes": "Réussite",
+      "Success": "Réussites",
+      "RCritique": "Réussite critique",
+      "EDramatique": "Échec dramatique",
+      "Difficulte": "Difficulté",
+      "Modificateur": "Modificateur",
+      "DIALOG": {
+        "Valider":"Valider",
+        "Annuler":"Annuler"
+      }
+    }
+  }
+}
