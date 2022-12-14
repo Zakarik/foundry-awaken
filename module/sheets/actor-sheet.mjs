@@ -1891,6 +1891,9 @@ export class AwakenActorSheet extends ActorSheet {
           result = false;
         }
         break;
+
+      default:
+        result = 99;
     }
 
     return result;
