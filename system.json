@@ -2,7 +2,7 @@
   "id": "awaken",
   "title": "Awaken",
   "description": "Une implémentation officielle, supportée par l'éditeur, pour le jeu Awaken.",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "esmodules": [
     "module/awaken.mjs"
   ],
@@ -65,7 +65,7 @@
   "gridUnits": "m",
   "url": "https://github.com/Zakarik/foundry-awaken",
   "manifest": "https://raw.githubusercontent.com/Zakarik/foundry-awaken/main/system.json",
-  "download": "https://github.com/Zakarik/foundry-awaken/archive/refs/tags/1.0.4.zip",
+  "download": "https://github.com/Zakarik/foundry-awaken/archive/refs/tags/1.1.0.zip",
   "changelog": "https://raw.githubusercontent.com/Zakarik/foundry-awaken/main/changelog.md",
   "authors": [
     {
@@ -76,7 +76,7 @@
     }
   ],
   "compatibility": {
-    "minimum": "10",
-    "verified": "11"
+    "minimum": "11",
+    "verified": "12"
   }
 }

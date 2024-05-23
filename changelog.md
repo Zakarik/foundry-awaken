@@ -1,3 +1,6 @@
+# Version 1.1.0
+Mise à jour de compatibilité de la V12.
+
 # Version 1.0.4
 Petite correction suite à la V11.
 

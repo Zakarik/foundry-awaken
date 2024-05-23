@@ -105,37 +105,6 @@ export class RollAwaken extends Roll {
         return renderTemplate(chatOptions.template, chatData);
     }
 
-    async toMessage(messageData = {}, { rollMode = null, create = true } = {}) {
-        // Perform the roll, if it has not yet been rolled
-        if (!this._evaluated) {
-            await this.evaluate({async:true});
-        }
-
-        // RollMode
-        const rMode = rollMode || messageData.rollMode || game.settings.get("core", "rollMode");
-        if (rMode) {
-            messageData = ChatMessage.applyRollMode(messageData, rMode);
-        }
-
-        // Prepare chat data
-        const msg = foundry.utils.mergeObject(messageData,
-            {
-                user: game.user.id,
-                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-                content: this._total,
-                sound: CONFIG.sounds.dice
-            }
-        );
-        msg.roll = this;
-
-        // Either create the message or just return the chat data
-        const message = await ChatMessage.create(msg, {
-            rollMode: rMode
-        });
-
-        return create ? message : message.data;
-    }
-
     /** @override */
     static fromData(data) {
         const roll = super.fromData(data);

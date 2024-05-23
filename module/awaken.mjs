@@ -57,39 +57,39 @@ Hooks.once('init', async function() {
   Actors.unregisterSheet("core", ActorSheet);
   Items.unregisterSheet("core", ItemSheet);
 
-  Actors.registerSheet("awaken", AwakenActorSheet, { 
+  Actors.registerSheet("awaken", AwakenActorSheet, {
     types: ["pj"],
-    makeDefault: true 
+    makeDefault: true
   });
 
-  Items.registerSheet("awaken", AwakenEquipementSheet, { 
+  Items.registerSheet("awaken", AwakenEquipementSheet, {
     types: ["equipement"],
-    makeDefault: true 
+    makeDefault: true
   });
 
-  Items.registerSheet("awaken", AwakenReputationSheet, { 
+  Items.registerSheet("awaken", AwakenReputationSheet, {
     types: ["reputation"],
-    makeDefault: true 
+    makeDefault: true
   });
 
-  Items.registerSheet("awaken", AwakenSpecialisationSheet, { 
+  Items.registerSheet("awaken", AwakenSpecialisationSheet, {
     types: ["specialisation"],
-    makeDefault: true 
+    makeDefault: true
   });
 
-  Items.registerSheet("awaken", AwakenProdigeSheet, { 
+  Items.registerSheet("awaken", AwakenProdigeSheet, {
     types: ["prodige"],
-    makeDefault: true 
+    makeDefault: true
   });
 
-  Items.registerSheet("awaken", AwakenArmementSheet, { 
+  Items.registerSheet("awaken", AwakenArmementSheet, {
     types: ["armement"],
-    makeDefault: true 
+    makeDefault: true
   });
 
-  Items.registerSheet("awaken", AwakenArmureSheet, { 
+  Items.registerSheet("awaken", AwakenArmureSheet, {
     types: ["armure"],
-    makeDefault: true 
+    makeDefault: true
   });
 
   // Preload Handlebars templates.
@@ -111,13 +111,13 @@ async function createMacro(data, slot) {
 
   let img = "";
 
-  if(type === "specialisation" || type === "prodige") { 
+  if(type === "specialisation" || type === "prodige") {
     if(data.itemId != 0) {
       const item = game.actors.get(data.actorId).items.find(i => i.id === data.itemId);
       img = item.img;
-    }    
+    }
   }
-  if(type === "famille") { 
+  if(type === "famille") {
     switch(data.attr) {
       case "esprit":
         img = "systems/awaken/assets/icons/esprit.svg";
@@ -162,13 +162,13 @@ async function RollAwakenMacro(id, type, attr, comp, itemId) {
   if(itemId != 0) {
     item = actor.items.find(i => i.id === itemId);
   }
-  
+
   const data = actor.data.data;
   const max = getMaxDices(data.vitalite.value, data.vitalite.subValue);
 
   let label = game.i18n.localize(CONFIG.AWAKEN.competences[comp]);
   let notRoll = false;
-  
+
   if(type === "specialisation" && item != 0) { label += ` (${item.name})`}
   if(type === "prodige" && item != 0) { label = item.name; }
   if(type === "vertus") { label = game.i18n.localize(CONFIG.AWAKEN.vertus[attr]); }
@@ -201,7 +201,7 @@ async function RollAwakenMacro(id, type, attr, comp, itemId) {
           label: game.i18n.localize("AWAKEN.ROLL.DIALOG.Valider"),
           callback: async (html) => {
             const mod = +html.find("input#mod").val();
-            
+
             const hasMalus = data.attributs[attr]?.malus || false;
             const malus = +data.corruption.malus || 0;
             const malusPhysique = +data?.armures?.malus?.physique || 0;
@@ -238,7 +238,7 @@ async function RollAwakenMacro(id, type, attr, comp, itemId) {
             } else if(type === "vertus") {
               let dice = 0;
               const value = +data.vertus[attr].value;
-              
+
               if(attr != "courage") {
                 const depense = data.vertus[attr].depense;
 
@@ -250,25 +250,25 @@ async function RollAwakenMacro(id, type, attr, comp, itemId) {
                     else if(depense.b2.used === false) { dice = 2; }
                     else if(depense.b1.used === false) { dice = 1; }
                     break;
-    
+
                   case 4:
                     if(depense.b4.used === false) { dice = 4; }
                     else if(depense.b3.used === false) { dice = 3; }
                     else if(depense.b2.used === false) { dice = 2; }
                     else if(depense.b1.used === false) { dice = 1; }
                     break;
-    
+
                   case 3:
                     if(depense.b3.used === false) { dice = 3; }
                     else if(depense.b2.used === false) { dice = 2; }
                     else if(depense.b1.used === false) { dice = 1; }
                     break;
-    
+
                   case 2:
                     if(depense.b2.used === false) { dice = 2; }
                     else if(depense.b1.used === false) { dice = 1; }
                     break;
-    
+
                   case 1:
                     if(depense.b1.used === false) { dice = 1; }
                     break;
@@ -280,9 +280,9 @@ async function RollAwakenMacro(id, type, attr, comp, itemId) {
               attribut = dice;
             }
 
-            let dices = attribut+competence+bonus+mod;    
+            let dices = attribut+competence+bonus+mod;
 
-            if(hasMalus === true) { 
+            if(hasMalus === true) {
               dices += malus;
               dices -= malusPhysique;
             }
@@ -292,7 +292,7 @@ async function RollAwakenMacro(id, type, attr, comp, itemId) {
             if(max < dices && max != false) {
               dices = max;
             }
-              
+
             const roll = await new game.awaken.RollAwaken(`${dices}D6cs>=5`, data);
 
             roll.awaken.label = label;
@@ -325,7 +325,7 @@ async function RollAwakenMacro(id, type, attr, comp, itemId) {
     }).render(true);
   }
 
-  
+
 }
 
 function getMaxDices(vitalite, subVitalite) {
@@ -344,7 +344,7 @@ function getMaxDices(vitalite, subVitalite) {
         result = 5;
       } else if(subVitalite === 1) {
         result = 8;
-      }        
+      }
       break;
 
     case 1:
@@ -352,7 +352,7 @@ function getMaxDices(vitalite, subVitalite) {
         result = 8;
       } else if(subVitalite === 1) {
         result = 9;
-      }  
+      }
       break;
 
     case 2:
@@ -360,7 +360,7 @@ function getMaxDices(vitalite, subVitalite) {
         result = 9;
       } else if(subVitalite === 1) {
         result = 10;
-      }  
+      }
       break;
 
     case 3:
@@ -368,7 +368,7 @@ function getMaxDices(vitalite, subVitalite) {
         result = 10;
       } else if(subVitalite === 1) {
         result = 11;
-      }  
+      }
       break;
 
     case 4:
@@ -376,13 +376,13 @@ function getMaxDices(vitalite, subVitalite) {
         result = 11;
       } else if(subVitalite === 1) {
         result = 12;
-      }  
+      }
       break;
 
     case 5:
       result = 12;
       break;
-      
+
     case 6:
       if(subVitalite === 2) {
         result = 12;

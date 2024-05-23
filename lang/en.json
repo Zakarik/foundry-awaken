@@ -1,16 +1,17 @@
 {
-  "ACTOR":{
-    "TypePj":"PJ"
+  "TYPES":{
+    "Actor":{
+      "pj":"PJ"
+    },
+    "Item":{
+      "reputation":"Réputation",
+      "equipement": "Équipement",
+      "specialisation": "Spécialisation",
+      "prodige": "Prodige",
+      "armement": "Armement",
+      "armure": "Armure"
+    }
   },
-  "ITEM":{
-    "TypeReputation":"Réputation",
-    "TypeEquipement": "Équipement",
-    "TypeSpecialisation": "Spécialisation",
-    "TypeProdige": "Prodige",
-    "TypeArmement": "Armement",
-    "TypeArmure": "Armure"
-  },
-
   "AWAKEN": {
     "Nom":"Nom",
     "Personnalite":"Personnalité",
