@@ -10,21 +10,12 @@
                 <label class="famille">
                     <span>{{localize "AWAKEN.PRODIGES.Famille"}} : </span>
                     <select name="system.famille">
-                        {{#select systemData.famille}}
-                        <option value="esprit">{{localize "AWAKEN.PRODIGES.Esprit"}}</option>
-                        <option value="corps">{{localize "AWAKEN.PRODIGES.Corps"}}</option>
-                        <option value="illusion">{{localize "AWAKEN.PRODIGES.Illusion"}}</option>
-                        <option value="realite">{{localize "AWAKEN.PRODIGES.Realite"}}</option>
-                        {{/select}}
+                        {{selectOptions (getSelect "familleProdige") selected=systemData.famille localize=true}}
                     </select>
                 </label>
 
                 <select name="system.type" class="type">
-                    {{#select systemData.type}}
-                    <option value="instinctif">{{localize "AWAKEN.PRODIGES.TYPES.Instinctif"}}</option>
-                    <option value="affectif">{{localize "AWAKEN.PRODIGES.TYPES.Affectif"}}</option>
-                    <option value="instinctifaffectif">{{localize "AWAKEN.PRODIGES.TYPES.InstinctifAffectif"}}</option>
-                    {{/select}}
+                    {{selectOptions (getSelect "typeProdige") selected=systemData.type localize=true}}
                 </select>
 
                 <label class="activation">

@@ -19,6 +19,7 @@ import { SimpleDataModel } from "./models/items/simple-data-model.mjs";
 import { SpecialisationDataModel } from "./models/items/specialisation-data-model.mjs";
 
 // Import helper/utility classes and constants.
+import { RegisterHandlebars } from "./helpers/handlebars.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { AWAKEN } from "./helpers/config.mjs";
 
@@ -62,7 +63,7 @@ Hooks.once('init', async function() {
   CONFIG.Item.documentClass = AwakenItem;
 
   CONFIG.Actor.dataModels = {
-    pj:PersonnageDataModel,
+    pj:PJDataModel,
   };
   CONFIG.Item.dataModels = {
     equipement:SimpleDataModel,
@@ -111,6 +112,9 @@ Hooks.once('init', async function() {
     types: ["armure"],
     makeDefault: true
   });
+
+  // HANDLEBARS
+  RegisterHandlebars();
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();

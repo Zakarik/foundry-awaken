@@ -7,10 +7,7 @@
             </h1>
             <div class="main">
                 <select class="type" name="system.type">
-                    {{#select systemData.type}}
-                    <option value="contact">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPE.Contact"}}</option>
-                    <option value="distance">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPE.Distance"}}</option>
-                    {{/select}}
+                    {{selectOptions (getSelect "typeWpn") selected=systemData.type localize=true}}
                 </select>
 
                 <label class="degats">
@@ -19,10 +16,7 @@
                 </label>
 
                 <select class="typedgts" name="system.typeDegats">
-                    {{#select systemData.typeDegats}}
-                    <option value="superficiels">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPEDGTS.Superficiels"}}</option>
-                    <option value="mortels">{{localize "AWAKEN.EQUIPEMENT.ARMEMENT.TYPEDGTS.Mortels"}}</option>
-                    {{/select}}
+                    {{selectOptions (getSelect "typeDgts") selected=systemData.typeDegats localize=true}}
                 </select>
             </div>
         </div>

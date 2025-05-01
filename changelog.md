@@ -1,3 +1,6 @@
+# Version 1.2.0
+Mise à jour de compatibilité de la V13.
+
 # Version 1.1.0
 Mise à jour de compatibilité de la V12.
 

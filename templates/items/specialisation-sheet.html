@@ -9,29 +9,7 @@
                     {{localize "AWAKEN.ATTRIBUTSCOMPETENCES.Competence"}} :
                 </span>
                 <select name="system.competence">
-                    {{#select systemData.competence}}
-                    <optgroup label='{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.SOCIAL.Label"}}'>
-                        <option value="expression">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.SOCIAL.Expression"}}</option>
-                        <option value="empathie">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.SOCIAL.Empathie"}}</option>
-                        <option value="rhetorique">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.SOCIAL.Rhetorique"}}</option>
-                        <option value="representation">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.SOCIAL.Representation"}}</option>
-                        <option value="negoce">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.SOCIAL.Negoce"}}</option>
-                    </optgroup>
-                    <optgroup label='{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.MENTAL.Label"}}'>
-                        <option value="erudition">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.MENTAL.Erudition"}}</option>
-                        <option value="artisanat">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.MENTAL.Artisanat"}}</option>
-                        <option value="medecine">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.MENTAL.Medecine"}}</option>
-                        <option value="savoir">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.MENTAL.Savoir"}}</option>
-                        <option value="perception">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.MENTAL.Perception"}}</option>
-                    </optgroup>
-                    <optgroup label='{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Label"}}'>
-                        <option value="agilite">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Agilite"}}</option>
-                        <option value="melee">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Melee"}}</option>
-                        <option value="discretion">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Discretion"}}</option>
-                        <option value="armesDistance">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.ArmesDistance"}}</option>
-                        <option value="survie">{{localize "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Survie"}}</option>
-                    </optgroup>
-                    {{/select}}
+                    {{selectOptions (getSelect "cmpSpecialisation") selected=systemData.competence localize=true}}
                 </select>
             </label>
         </div>

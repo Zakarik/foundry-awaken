@@ -1474,7 +1474,7 @@
   font-variant: small-caps;
 }
 .specialisation label.select select {
-  text-align: center;
+  text-align: left;
   border: 0px;
   border-radius: 0px;
   font-size: 15px;

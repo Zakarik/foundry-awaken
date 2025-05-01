@@ -23,8 +23,6 @@ export class AwakenProdigeSheet extends ItemSheet {
     context.data.system.labelType = game.i18n.localize(CONFIG.AWAKEN.prodiges[context.data.system.type]);
     context.systemData = context.data.system;
 
-    console.log(context);
-
     return context;
   }
 
