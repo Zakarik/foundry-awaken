@@ -61,8 +61,23 @@
       "flags": {}
     }
   ],
-  "gridDistance": 5,
-  "gridUnits": "m",
+  "documentTypes": {
+    "Actor": {
+      "pj": {}
+    },
+    "Item":{
+      "reputation":{},
+      "equipement":{},
+      "specialisation":{},
+      "prodige":{},
+      "armement":{},
+      "armure":{}
+    }
+  },
+  "grid":{
+    "distance":5,
+    "unit":"m"
+  },
   "url": "https://github.com/Zakarik/foundry-awaken",
   "manifest": "https://raw.githubusercontent.com/Zakarik/foundry-awaken/main/system.json",
   "download": "https://github.com/Zakarik/foundry-awaken/archive/refs/tags/1.1.0.zip",
@@ -76,7 +91,7 @@
     }
   ],
   "compatibility": {
-    "minimum": "11",
-    "verified": "12"
+    "minimum": "12",
+    "verified": "13"
   }
 }

@@ -10,6 +10,14 @@ import { AwakenSpecialisationSheet } from "./sheets/items/specialisation-sheet.m
 import { AwakenProdigeSheet } from "./sheets/items/prodige-sheet.mjs";
 import { AwakenArmementSheet } from "./sheets/items/armement-sheet.mjs";
 import { AwakenArmureSheet } from "./sheets/items/armure-sheet.mjs";
+// Import models classes
+import { PJDataModel } from "./models/actors/personnage-data-model.mjs";
+import { ArmementDataModel } from "./models/items/armement-data-model.mjs";
+import { ArmureDataModel } from "./models/items/armure-data-model.mjs";
+import { ProdigeDataModel } from "./models/items/prodige-data-model.mjs";
+import { SimpleDataModel } from "./models/items/simple-data-model.mjs";
+import { SpecialisationDataModel } from "./models/items/specialisation-data-model.mjs";
+
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { AWAKEN } from "./helpers/config.mjs";
@@ -52,6 +60,18 @@ Hooks.once('init', async function() {
   // Define custom Document classes
   CONFIG.Actor.documentClass = AwakenActor;
   CONFIG.Item.documentClass = AwakenItem;
+
+  CONFIG.Actor.dataModels = {
+    pj:PersonnageDataModel,
+  };
+  CONFIG.Item.dataModels = {
+    equipement:SimpleDataModel,
+    reputation:SimpleDataModel,
+    specialisation:SpecialisationDataModel,
+    prodige:ProdigeDataModel,
+    armement:ArmementDataModel,
+    armure:ArmureDataModel,
+  };
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);

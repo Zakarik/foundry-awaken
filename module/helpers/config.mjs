@@ -4,6 +4,23 @@ export const AWAKEN = {};
  * The set of Ability Scores used within the sytem.
  * @type {Object}
  */
+
+ AWAKEN.ListAttributs = {
+   social:{
+      first:true,
+      competences:['expression', 'empathie', 'rhetorique', 'representation', 'negoce']
+   },
+   mental:{
+      competences:['erudition', 'artisanat', 'medecine', 'savoir', 'perception']
+   },
+   physique:{
+      malus:true,
+      competences:['agilite', 'melee', 'discretion', 'armesDistance', 'survie']
+   }
+ }
+
+ AWAKEN.ListProdiges = ['esprit', 'illusion', 'corps', 'realite'];
+
  AWAKEN.attributs = {
     "physique": "AWAKEN.ATTRIBUTSCOMPETENCES.PHYSIQUE.Label",
     "mental": "AWAKEN.ATTRIBUTSCOMPETENCES.MENTAL.Label",
