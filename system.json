@@ -79,7 +79,7 @@
     "unit":"m"
   },
   "url": "#{URL}#",
-  "manifest": "https://github.com/Zakarik/foundry-awaken/releases/download/v1.2.0/system.json",
+  "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",
   "changelog": "https://raw.githubusercontent.com/Zakarik/foundry-awaken/main/changelog.md",
   "authors": [
