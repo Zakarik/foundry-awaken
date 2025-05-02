@@ -1,3 +1,6 @@
+# Version 1.2.2
+- Correction de problème de versioning.
+
 # Version 1.2.1
 - Correction d'un bug de calcul de l'endurance.
 
