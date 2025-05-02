@@ -1,3 +1,6 @@
+# Version 1.2.1
+- Correction d'un bug de calcul de l'endurance.
+
 # Version 1.2.0
 Mise à jour de compatibilité de la V13.
 

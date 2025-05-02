@@ -36,6 +36,7 @@ export class PJDataModel extends foundry.abstract.TypeDataModel {
     }
 
     prepareBaseData() {
+      this._setEndurance();
     }
 
     prepareDerivedData() {
