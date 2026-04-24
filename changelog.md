@@ -1,3 +1,6 @@
+# Version 1.3.0
+- Compatibilité V14.
+
 # Version 1.2.2
 - Correction de problème de versioning.
 

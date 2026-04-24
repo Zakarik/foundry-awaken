@@ -418,3 +418,13 @@ function getMaxDices(vitalite, subVitalite) {
 
   return result;
 }
+
+Hooks.on("renderChatMessage", (message, html, messageData) => {
+    const tgt = $(html);
+
+    tgt.find('.message-content div.dice-result').click(ev => {
+        const header = $(ev.currentTarget).parents('.dice-roll');
+        console.warn(header);
+        header.toggleClass('expanded');
+    });
+});

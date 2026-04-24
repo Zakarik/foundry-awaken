@@ -32,9 +32,9 @@ export class AwakenItem extends Item {
                     data.img = "systems/awaken/assets/icons/reputation.svg";
                     break;
             }
-            
+
         }
 
-        await super.create(data, options);
+        return await super.create(data, options);
     }
 }
